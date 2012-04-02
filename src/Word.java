@@ -86,7 +86,7 @@ public class Word {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Word word1 = (Word) o;
-        return eos.equals(word1.eos) && !(links != null ? !links.equals(word1.links) : word1.links != null) && !(word != null ? !word.equals(word1.word) : word1.word != null);
+        return !(word != null ? !word.equals(word1.word) : word1.word != null);
     }
 
     @Override

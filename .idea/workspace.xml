@@ -93,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Word.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.8064516">
+            <state line="88" column="43" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,6 +106,15 @@
         <entry file="file://$PROJECT_DIR$/test/WordTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="22" selection-start="718" selection-end="718" vertical-scroll-proportion="0.4857143">
               <folding />
             </state>
           </provider>
@@ -248,30 +257,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WordTest">
-    <configuration default="false" name="WordTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="WordCounterSentenceGenerator" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WordTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.UI">
     <configuration default="false" name="WordTest.testAddLink" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="WordCounterSentenceGenerator" />
@@ -360,6 +346,23 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UI" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="UI" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="WordCounterSentenceGenerator" />
+      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -485,11 +488,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.WordTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.WordTest.testAddLink" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.WordTest.testIncrementLink" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.WordTest.checkLinkExistsWorks" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.WordTest.hasEOSLink" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.WordTest.testAddLink" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WordTest.testIncrementLink" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WordTest.checkLinkExistsWorks" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WordTest.hasEOSLink" />
+      <item index="4" class="java.lang.String" itemvalue="Application.UI" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -640,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.3272727">
@@ -668,6 +664,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="43" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/WordTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0">
@@ -675,9 +678,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.8064516">
+        <state line="23" column="22" selection-start="718" selection-end="718" vertical-scroll-proportion="0.4857143">
           <folding />
         </state>
       </provider>
