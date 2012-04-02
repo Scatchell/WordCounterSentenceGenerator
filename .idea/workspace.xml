@@ -78,7 +78,7 @@
       <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="16" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.9896373">
+            <state line="45" column="41" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.8134715">
               <folding />
             </state>
           </provider>
@@ -130,9 +130,9 @@
         <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/Link.java" />
-        <option value="$PROJECT_DIR$/testFile" />
         <option value="$PROJECT_DIR$/src/Word.java" />
         <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
+        <option value="$PROJECT_DIR$/testFile" />
       </list>
     </option>
   </component>
@@ -493,7 +493,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-744" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -621,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testFile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="5" selection-start="1629" selection-end="1629" vertical-scroll-proportion="1.0207254">
@@ -674,9 +667,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testFile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="554" column="890" selection-start="200318" selection-end="200318" vertical-scroll-proportion="0.90348524">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="16" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.9896373">
+        <state line="45" column="41" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.8134715">
           <folding />
         </state>
       </provider>
