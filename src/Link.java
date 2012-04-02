@@ -35,7 +35,6 @@ public class Link {
         if (o == null || getClass() != o.getClass()) return false;
 
         Link link = (Link) o;
-
         return otherWord.toString().equals(((Link) link).otherWord.toString());
     }
 
