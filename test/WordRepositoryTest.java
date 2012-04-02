@@ -65,7 +65,7 @@ public class WordRepositoryTest {
         Word foo = new Word("foo");
         Word bar = new Word("bar");
         wordRepository.addWord(foo);
-        assertEquals(new Word("no_link"), wordRepository.getByName("foo").getBestLink());
+        assertEquals(null, wordRepository.getByName("foo").getBestLink());
         wordRepository.addOrUpdateWord(foo, bar);
         assertEquals(bar, wordRepository.getByName("foo").getBestLink());
         wordRepository.addOrUpdateWord(foo, bar);

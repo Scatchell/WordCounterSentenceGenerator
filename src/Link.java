@@ -2,6 +2,7 @@
 public class Link {
     public Word otherWord;
     public long rating;
+    public long highestRating;
 
     public Link(Word otherWord) {
         this.otherWord = otherWord;
@@ -10,10 +11,13 @@ public class Link {
 
     public void plusRate() {
         this.rating++;
+        if (this.rating > this.highestRating) {
+            this.highestRating = this.rating;
+        }
     }
     
     public void downRate() {
-        this.rating -= (int) (Math.random() * 20) + 1;
+        this.rating -= (int) (Math.random() * this.rating) + 1;
     }
 
     @Override
