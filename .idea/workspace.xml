@@ -75,19 +75,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+            <state line="45" column="16" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.9896373">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Word.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="23" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.126943">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,8 +131,8 @@
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/Link.java" />
         <option value="$PROJECT_DIR$/testFile" />
-        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
+        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
       </list>
     </option>
   </component>
@@ -493,7 +493,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-744" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -509,7 +509,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20333838" sideWeight="0.6602564" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33974358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33974358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -667,16 +667,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="23" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.126943">
+        <state line="45" column="16" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.9896373">
           <folding />
         </state>
       </provider>

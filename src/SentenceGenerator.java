@@ -42,7 +42,8 @@ public class SentenceGenerator {
                 sb.append(" ");
                 next = repository.getByName(next.getBestLink().toString());
             } else {
-                sb.append("NO FOLLOWING LINK");
+                // sb.append("NO FOLLOWING LINK");  <- commenting out for now
+                sb.append("is the end.");
                 break;
             }
         }

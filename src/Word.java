@@ -94,6 +94,16 @@ public class Word {
         return returnWord;
     }
 
+    public boolean hasEOSLink() {
+        for (Link link : links) {
+            Word x = link.otherWord;
+            if (x.equals(new Word(eos))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -114,15 +124,5 @@ public class Word {
     @Override
     public String toString() {
         return this.word;
-    }
-
-    public boolean hasEOSLink() {
-        for (Link link : links) {
-            Word x = link.otherWord;
-            if (x.equals(new Word(eos))) {
-                return true;
-            }
-        }
-        return false;
     }
 }
