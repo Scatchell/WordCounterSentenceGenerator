@@ -20,7 +20,7 @@ public class UI {
             System.out.println(next.word + ": " + next.getLinks().toString());
         }
 
-        SentenceGenerator sg = new SentenceGenerator(words);
+        SentenceGenerator sg = new SentenceGenerator(WordRepository.getInstance());
         sg.generate();
     }
 

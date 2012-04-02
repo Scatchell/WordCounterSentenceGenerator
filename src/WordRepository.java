@@ -25,14 +25,16 @@ public class WordRepository {
         return this.wordList;
     }
 
-    public void addOrUpdateWord(Word tempWord, Word toAdd) {
-        Integer wordPosition = getIndexPositionOfWord(tempWord);
+    public void addOrUpdateWord(Word anchorWord, Word linkedWord) {
+        Integer wordPosition = getIndexPositionOfWord(anchorWord);
         if (wordPosition == null) {
-            addWord(tempWord);
-            wordPosition = getIndexPositionOfWord(tempWord);
-            wordList.get(wordPosition).addLink(toAdd);
+            addWord(anchorWord);
+            addWord(linkedWord);
+            wordPosition = getIndexPositionOfWord(anchorWord);
+            wordList.get(wordPosition).addLink(linkedWord);
         } else {
-            wordList.get(wordPosition).addLink(toAdd);
+            addWord(linkedWord);
+            wordList.get(wordPosition).addLink(linkedWord);
         }
     }
 
@@ -43,6 +45,15 @@ public class WordRepository {
                 return count;
             }
             count++;
+        }
+        return null;
+    }
+
+    public Word getByName(String wordName) {
+        for (Word aWordList : wordList) {
+            if (aWordList.toString().equals(wordName)) {
+                return aWordList;
+            }
         }
         return null;
     }

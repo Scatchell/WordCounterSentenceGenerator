@@ -25,14 +25,14 @@ public class WordRepositoryTest {
         wordRepository.addOrUpdateWord(word, linkWord);
         assertEquals(true, wordRepository.getWordList().contains(word));
         assertEquals(0, (Object) wordRepository.getWordList().get(0).getIndexOfLinkOrNull(linkWord));
-        assertEquals(1, wordRepository.getWordList().size());
+        assertEquals(2, wordRepository.getWordList().size());
     }
 
     @Test
     public void whenAddingSameWordTwiceItDoesNotMakeDuplicateEntries() {
         wordRepository.addWord(word);
         wordRepository.addWord(word);
-        assertEquals(1, wordRepository.getWordList().size());
+        assertEquals(2, wordRepository.getWordList().size());
     }
     
     @Test
@@ -50,6 +50,25 @@ public class WordRepositoryTest {
         assertEquals(0, (Object) wordRepository.getWordList().get(0).getIndexOfLinkOrNull(linkWord));
         assertEquals(0, (Object) wordRepository.getIndexPositionOfWord(word));
         wordRepository.addWord(new Word("Mark"));
-        assertEquals(2, wordRepository.getWordList().size());
+        assertEquals(3, wordRepository.getWordList().size());
+    }
+    
+    @Test
+    public void canGetWordByName() {
+        Word foo = new Word("foo");
+        wordRepository.addWord(foo);
+        assertEquals(foo, wordRepository.getByName("foo"));
+    }
+    
+    @Test
+    public void updatesWordsCorrectly() {
+        Word foo = new Word("foo");
+        Word bar = new Word("bar");
+        wordRepository.addWord(foo);
+        assertEquals(null, wordRepository.getByName("foo").getBestLink());
+        wordRepository.addOrUpdateWord(foo, bar);
+        assertEquals(bar, wordRepository.getByName("foo").getBestLink());
+        wordRepository.addOrUpdateWord(foo, bar);
+        assertEquals(bar, wordRepository.getByName("foo").getBestLink());
     }
 }

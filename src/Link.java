@@ -21,8 +21,10 @@ public class Link {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Link link = (Link) o;
-        return !(otherWord != null ? !otherWord.equals(link.otherWord) : link.otherWord != null);
+
+        return otherWord.toString().equals(((Link) o).otherWord.toString());
     }
 
     @Override

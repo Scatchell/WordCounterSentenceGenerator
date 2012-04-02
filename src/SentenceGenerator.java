@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 
 public class SentenceGenerator {
-    ArrayList<Word> words;
+    WordRepository repository;
     int numOfWords = 10;
+    final static Word endOfSentence = new Word("^7eos&^");
     
-    public SentenceGenerator(ArrayList<Word> words) {
-        this.words = words;
+    public SentenceGenerator(WordRepository repository) {
+        this.repository = repository;
     }
     
     public void generate() {
         StringBuilder sb = new StringBuilder();
-        ArrayList<Word> wordsClone = (ArrayList<Word>) this.words.clone();
+        ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         // randomized starting word to get a better feel for what is happening
         Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
         for (int i = 0; i < numOfWords; i++) {
@@ -31,12 +32,26 @@ public class SentenceGenerator {
         System.out.println(sb.toString());
     }
 
-
     public Word getNextLink(Word first) {
-        if (first.getBestLink() != null) {
-            return first.getBestLink();
+        Word check = repository.getByName(first.toString());
+        if (check.getBestLink() != null) {
+            return check.getBestLink();
         } else {
-            return Word.endOfSentence;
+            return endOfSentence;
         }
+    }
+
+    public String buildString(Word start) {
+        StringBuilder sb = new StringBuilder();
+        Word next = repository.getByName(start.toString());
+        sb.append(next.toString());
+        sb.append(" ");
+        while (next.getBestLink() != null) {
+            sb.append(next.getBestLink().toString());
+            sb.append(" ");
+            next = repository.getByName(next.getBestLink().toString());
+        }
+        return sb.toString();
+
     }
 }

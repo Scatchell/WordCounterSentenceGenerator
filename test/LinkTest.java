@@ -13,11 +13,20 @@ public class LinkTest {
         Link link = new Link(new Word("mark"));
         assertEquals(new Word("mark"), link.otherWord);
     }
-    
+
     @Test
     public void shouldBeAbleToPlusRate() {
         Link link = new Link(new Word("mark"));
         link.plusRate();
         assertEquals(2, link.rating);
+    }
+    
+    @Test
+    public void linkEqualityTestsCorrectly() {
+        Link link = new Link(new Word("foo"));
+        Link foo = new Link(new Word("foo"));
+        assertEquals(link, foo);
+        Link bar = new Link(new Word("bar"));
+        assertEquals(false, foo.equals(bar));
     }
 }

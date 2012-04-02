@@ -5,7 +5,6 @@ public class Word {
     String word;
     ArrayList<Link> links = new ArrayList<Link>();
     final String eos = "^&eos&^";
-    final static Word endOfSentence = new Word("^7eos&^");
 
     public Word(String word) {
         this.word = this.trimWord(word);
@@ -22,7 +21,7 @@ public class Word {
     }
 
     private String trimWord(String word) {
-        return word.toLowerCase().replaceFirst("(\\.|\\!|\\?|\\s|\\,)", "");
+        return word.toLowerCase().replaceFirst("(\\.|\\!|\\;|\\?|\\s|\\,)", "");
     }
 
     public ArrayList<Link> getLinks() {
