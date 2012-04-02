@@ -50,9 +50,9 @@ public class WordRepository {
     }
 
     public Word getByName(String wordName) {
-        for (Word aWordList : wordList) {
-            if (aWordList.toString().equals(wordName)) {
-                return aWordList;
+        for (Word word : wordList) {
+            if (word.toString().equals(wordName)) {
+                return word;
             }
         }
         return null;

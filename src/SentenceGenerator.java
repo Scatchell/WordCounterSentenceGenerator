@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class SentenceGenerator {
     WordRepository repository;
     int numOfWords = 10;
-    final static Word endOfSentence = new Word("^7eos&^");
+    final static Word endOfSentence = new Word("^&eos&^");
     
     public SentenceGenerator(WordRepository repository) {
         this.repository = repository;
@@ -13,7 +13,7 @@ public class SentenceGenerator {
         StringBuilder sb = new StringBuilder();
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         // randomized starting word to get a better feel for what is happening
-        Word word = wordsClone.get((int) (Math.random() * 5));
+        Word word = wordsClone.get((int) (Math.random() * 100));
 //        for (int i = 0; i < numOfWords; i++) {
 //            if (i == numOfWords - 1) {
 //                for (Word next : wordsClone) {
@@ -53,9 +53,11 @@ public class SentenceGenerator {
                 sb.append(next.getBestLink().toString());
                 sb.append(" ");
                 next = repository.getByName(next.getBestLink().toString());
+            } else {
+                sb.append(endOfSentence);
+                break;
             }
         }
         return sb.toString();
-
     }
 }
