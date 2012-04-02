@@ -13,7 +13,7 @@ public class SentenceGenerator {
         StringBuilder sb = new StringBuilder();
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         // randomized starting word to get a better feel for what is happening
-        Word word = wordsClone.get((int) (Math.random() * 100));
+        Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
 //        for (int i = 0; i < numOfWords; i++) {
 //            if (i == numOfWords - 1) {
 //                for (Word next : wordsClone) {
@@ -36,11 +36,7 @@ public class SentenceGenerator {
 
     public Word getNextLink(Word first) {
         Word check = repository.getByName(first.toString());
-        if (check.getBestLink() != null) {
-            return check.getBestLink();
-        } else {
-            return endOfSentence;
-        }
+        return check.getBestLink();
     }
 
     public String buildString(Word start, int counter) {
@@ -50,14 +46,19 @@ public class SentenceGenerator {
         sb.append(" ");
         for (int i = 0; i < counter; i++) {
             if (i == counter - 1 ) {
-                sb.append(repository.getLikelyEOSWord(next).toString());
-                break;
+                if (repository.getLikelyEOSWord(next) == null) {
+                    sb.append("EOS NOT FOUND");
+                    break;
+                } else {
+                    sb.append(repository.getLikelyEOSWord(next).toString()).append(".");
+                    break;
+                }
             } else if (next.getBestLink() != null) {
                 sb.append(next.getBestLink().toString());
                 sb.append(" ");
                 next = repository.getByName(next.getBestLink().toString());
             } else {
-                sb.append(endOfSentence);
+                sb.append("NO FOLLOWING LINK");
                 break;
             }
         }
