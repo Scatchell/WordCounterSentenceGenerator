@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class SentenceGenerator {
     WordRepository repository;
-    public int numOfWords = 10;
+    public int numOfWords;
     final static Word endOfSentence = new Word("^&eos&^");
     
     public SentenceGenerator(WordRepository repository) {
@@ -10,6 +10,7 @@ public class SentenceGenerator {
     }
     
     public void generate() {
+        numOfWords = (int) ((Math.random() * 6) + 5);
         StringBuilder sb = new StringBuilder();
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));

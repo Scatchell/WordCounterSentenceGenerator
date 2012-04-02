@@ -4,7 +4,6 @@
     <list default="true" id="f8971485-aa95-4ed2-b688-cf7c27707c48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SentenceGenerator.java" afterPath="$PROJECT_DIR$/src/SentenceGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Word.java" afterPath="$PROJECT_DIR$/src/Word.java" />
     </list>
     <ignored path="WordInformation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,9 +81,9 @@
       <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="52" selection-start="3186" selection-end="3186" vertical-scroll-proportion="1.1761658">
+            <state line="83" column="44" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.626943">
               <folding>
-                <element signature="e#1248#1254#0" expanded="true" />
+                <element signature="e#1297#1303#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -597,7 +596,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="first word of sentence now capitalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="first word of sentence now capitalized, solitary &quot;i&quot; capitalized, fixed other capitalization bug, removed some additional unwanted characters from words" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -616,6 +615,7 @@
     <MESSAGE value="new test" />
     <MESSAGE value="fixed/removed redundant tests in filereader" />
     <MESSAGE value="first word of sentence now capitalized" />
+    <MESSAGE value="first word of sentence now capitalized, solitary &quot;i&quot; capitalized, fixed other capitalization bug, removed some additional unwanted characters from words" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -714,9 +714,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="52" selection-start="3186" selection-end="3186" vertical-scroll-proportion="1.1761658">
+        <state line="83" column="44" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.626943">
           <folding>
-            <element signature="e#1248#1254#0" expanded="true" />
+            <element signature="e#1297#1303#0" expanded="true" />
           </folding>
         </state>
       </provider>
