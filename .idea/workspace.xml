@@ -4,6 +4,7 @@
     <list default="true" id="f8971485-aa95-4ed2-b688-cf7c27707c48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SentenceGenerator.java" afterPath="$PROJECT_DIR$/src/SentenceGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Word.java" afterPath="$PROJECT_DIR$/src/Word.java" />
     </list>
     <ignored path="WordInformation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,9 +82,9 @@
       <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="66" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.7668394">
+            <state line="82" column="52" selection-start="3186" selection-end="3186" vertical-scroll-proportion="1.1761658">
               <folding>
-                <element signature="e#1243#1249#0" expanded="true" />
+                <element signature="e#1248#1254#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,7 +93,7 @@
       <file leaf-file-name="WordRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
+            <state line="48" column="20" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +102,7 @@
       <file leaf-file-name="Word.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="63" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0">
+            <state line="23" column="64" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,11 +151,11 @@
         <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/WordRepository.java" />
-        <option value="$PROJECT_DIR$/src/Word.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/test/LinkTest.java" />
         <option value="$PROJECT_DIR$/test/MyFileReaderTest.java" />
         <option value="$PROJECT_DIR$/src/Link.java" />
+        <option value="$PROJECT_DIR$/src/Word.java" />
         <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
       </list>
     </option>
@@ -596,7 +597,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed/removed redundant tests in filereader" />
+    <option name="LAST_COMMIT_MESSAGE" value="first word of sentence now capitalized" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -614,6 +615,7 @@
     <MESSAGE value="Determined that speed lag is a result of the file read, that's it - otherwise it runs fast.  Added in a prompt: pressing enter now displays a new random sentence.  Pretty cool actually :)" />
     <MESSAGE value="new test" />
     <MESSAGE value="fixed/removed redundant tests in filereader" />
+    <MESSAGE value="first word of sentence now capitalized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -673,20 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="63" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/MyFileReaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="0.6735751">
@@ -710,11 +698,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="20" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="64" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="66" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.7668394">
+        <state line="82" column="52" selection-start="3186" selection-end="3186" vertical-scroll-proportion="1.1761658">
           <folding>
-            <element signature="e#1243#1249#0" expanded="true" />
+            <element signature="e#1248#1254#0" expanded="true" />
           </folding>
         </state>
       </provider>

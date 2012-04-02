@@ -28,7 +28,7 @@ public class SentenceGenerator {
         Word next = repository.getByName(start.toString());
         String firstWord = next.toString();
         String firstLetter = firstWord.substring(0,1);
-        sb.append(firstWord.replace(firstLetter, firstLetter.toUpperCase()));
+        sb.append(firstWord.replaceFirst(firstLetter, firstLetter.toUpperCase()));
         sb.append(" ");
         ArrayList<Word> usedWords = new ArrayList<Word>();
         usedWords.add(next);
@@ -80,6 +80,6 @@ public class SentenceGenerator {
                 sb.append(" ");
             }
         }
-        return sb.toString();
+        return sb.toString().replaceAll(" i ", " I ");
     }
 }
