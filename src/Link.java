@@ -13,7 +13,7 @@ public class Link {
     }
     
     public void downRate() {
-        this.rating--;
+        this.rating -= (int) (Math.random() * 4);
     }
 
     @Override
