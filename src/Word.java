@@ -10,19 +10,19 @@ public class Word {
         this.word = this.trimWord(word);
     }
 
-    public void addLink(String otherWord) {
-        otherWord = trimWord(otherWord);
+    //override so we can compare vs "eos" via .equals()
+    public String toString() {
+        return this.word;
+    }
 
+    public void addLink(Word otherWord) {
         Integer linkPosition = checkLinkExists(otherWord);
-
         if (linkPosition != null) {
             this.links.get(linkPosition).plusRate();
         } else {
             this.links.add(new Link(otherWord));
         }
-
         Collections.sort(this.links, new LinksComparator());
-
     }
 
     private String trimWord(String word) {
@@ -33,7 +33,7 @@ public class Word {
         return links;
     }
 
-    public String getSingleLink(int index) {
+    public Word getSingleLink(int index) {
         if (links.isEmpty()) {
             return null;
         } else {
@@ -46,10 +46,9 @@ public class Word {
             return null;
         } else {
             for (Link next : links) {
-                if (next.otherWord.equals(eos)) {
+                if (next.otherWord.toString().equals(eos)) {
                     return this.word;
                 }
-
             }
         }
         return null;
@@ -73,18 +72,15 @@ public class Word {
         return null;
     }
 
-    public Integer checkLinkExists(String link) {
+    public Integer checkLinkExists(Word link) {
         int count = 0;
         Link otherLink = new Link(link);
-
         for (Link next : links) {
             if (next.equals(otherLink)) {
                 return count;
             }
-
             count++;
         }
-
         return null;
     }
 
@@ -92,19 +88,19 @@ public class Word {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Word word1 = (Word) o;
-
-        return !(word != null ? !word.equals(word1.word) : word1.word != null);
-
+        return eos.equals(word1.eos) && !(links != null ? !links.equals(word1.links) : word1.links != null) && !(word != null ? !word.equals(word1.word) : word1.word != null);
     }
 
     @Override
     public int hashCode() {
-        return word != null ? word.hashCode() : 0;
+        int result = word != null ? word.hashCode() : 0;
+        result = 31 * result + (links != null ? links.hashCode() : 0);
+        result = 31 * result + (eos.hashCode());
+        return result;
     }
 
-    public String getBestLink() {
+    public Word getBestLink() {
         //todo make links have a flag that shows if they have already been chosen or not, and only pick links that have not yet been chosen
         return getSingleLink(0);
     }

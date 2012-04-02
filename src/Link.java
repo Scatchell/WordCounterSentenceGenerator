@@ -1,10 +1,9 @@
 
 public class Link {
-    String otherWord;
-
+    Word otherWord;
     long rating;
 
-    public Link(String otherWord) {
+    public Link(Word otherWord) {
         this.otherWord = otherWord;
         this.rating = 1;
     }
