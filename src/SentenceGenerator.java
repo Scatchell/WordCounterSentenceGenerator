@@ -26,7 +26,9 @@ public class SentenceGenerator {
     public String buildString(Word start, int counter) {
         StringBuilder sb = new StringBuilder();
         Word next = repository.getByName(start.toString());
-        sb.append(next.toString());
+        String firstWord = next.toString();
+        String firstLetter = firstWord.substring(0,1);
+        sb.append(firstWord.replace(firstLetter, firstLetter.toUpperCase()));
         sb.append(" ");
         ArrayList<Word> usedWords = new ArrayList<Word>();
         usedWords.add(next);
