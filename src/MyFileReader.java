@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MyFileReader {
     String filePath = "/home/mbillie/WordCounterSentenceGenerator/testFile";
     final String eos = "^&eos&^";
-    private final WordRepository wordRepository;
+    public final WordRepository wordRepository;
 
     public MyFileReader(WordRepository wordRepository) {
         this.wordRepository = wordRepository;

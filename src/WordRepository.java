@@ -25,7 +25,6 @@ public class WordRepository {
 
     public void addOrUpdateWord(Word tempWord, String toAdd) {
         Integer wordPosition = getIndexPositionOfWord(tempWord);
-
         if (wordPosition == null) {
             addWord(tempWord);
             wordPosition = getIndexPositionOfWord(tempWord);
