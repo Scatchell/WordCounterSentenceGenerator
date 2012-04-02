@@ -81,7 +81,7 @@
       <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="44" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.626943">
+            <state line="12" column="51" selection-start="371" selection-end="371" vertical-scroll-proportion="0.27979276">
               <folding>
                 <element signature="e#1297#1303#0" expanded="true" />
               </folding>
@@ -596,7 +596,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="first word of sentence now capitalized, solitary &quot;i&quot; capitalized, fixed other capitalization bug, removed some additional unwanted characters from words" />
+    <option name="LAST_COMMIT_MESSAGE" value="randomized sentence length (6 to 11 words iirc) to make it more interesting" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -616,6 +616,7 @@
     <MESSAGE value="fixed/removed redundant tests in filereader" />
     <MESSAGE value="first word of sentence now capitalized" />
     <MESSAGE value="first word of sentence now capitalized, solitary &quot;i&quot; capitalized, fixed other capitalization bug, removed some additional unwanted characters from words" />
+    <MESSAGE value="randomized sentence length (6 to 11 words iirc) to make it more interesting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -714,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="44" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.626943">
+        <state line="12" column="51" selection-start="371" selection-end="371" vertical-scroll-proportion="0.27979276">
           <folding>
             <element signature="e#1297#1303#0" expanded="true" />
           </folding>

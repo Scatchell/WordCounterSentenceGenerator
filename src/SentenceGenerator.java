@@ -10,7 +10,7 @@ public class SentenceGenerator {
     }
     
     public void generate() {
-        numOfWords = (int) ((Math.random() * 6) + 5);
+        numOfWords = (int) ((Math.random() * 7) + 4);
         StringBuilder sb = new StringBuilder();
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
