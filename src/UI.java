@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.*;
 
 public class UI {
     public static void main(String[] args) {
@@ -21,8 +22,18 @@ public class UI {
         }
 
         SentenceGenerator sg = new SentenceGenerator(WordRepository.getInstance());
-        sg.generate();
+        while (true) {
+            System.out.print("Please press enter to generate a random sentence...");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String name = null;
+            try {
+                name = br.readLine();
+            } catch (IOException e) {
+                System.out.println("Error!");
+                System.exit(1);
+            }
+
+            sg.generate();
+        }
     }
-
-
 }

@@ -21,7 +21,7 @@ public class Word {
     }
 
     private String trimWord(String word) {
-        return word.toLowerCase().replaceFirst("(\\.|!|;|\\-|:|\\?|\\s|,)", "");
+        return word.toLowerCase().replaceFirst("(\\.|!|;|\\(|\\)|\\-|:|\\?|\\s|,)", "");
     }
 
     public ArrayList<Link> getLinks() {
