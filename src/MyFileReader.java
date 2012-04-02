@@ -20,16 +20,16 @@ public class MyFileReader {
         String currentLine;
         String[] pieces;
         Word tempWord;
-        String toAdd;
+        Word toAdd;
 
         while ((currentLine = bufferedReader.readLine()) != null) {
             pieces = currentLine.split("\\s+");
             for (int i = 0; i < (pieces.length); i++) {
                 tempWord = new Word(pieces[i]);
                 if (pieces[i].matches(".*(?<!Mr|Mrs|Dr|Ms)(\\.|\\!|\\?)\\s*.*")) {
-                    toAdd = eos;
+                    toAdd = new Word(eos);
                 } else if (i < pieces.length - 1) {
-                    toAdd = pieces[i + 1];
+                    toAdd = new Word(pieces[i + 1]);
                 } else {
                     toAdd = null;
                 }

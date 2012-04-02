@@ -10,11 +10,6 @@ public class Word {
         this.word = this.trimWord(word);
     }
 
-    //override so we can compare vs "eos" via .equals()
-    public String toString() {
-        return this.word;
-    }
-
     public void addLink(Word otherWord) {
         Integer linkPosition = checkLinkExists(otherWord);
         if (linkPosition != null) {
@@ -52,7 +47,6 @@ public class Word {
             }
         }
         return null;
-
     }
 
     public Integer hasEOSLink() {
@@ -84,6 +78,11 @@ public class Word {
         return null;
     }
 
+    public Word getBestLink() {
+        //todo make links have a flag that shows if they have already been chosen or not, and only pick links that have not yet been chosen
+        return getSingleLink(0);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -100,8 +99,9 @@ public class Word {
         return result;
     }
 
-    public Word getBestLink() {
-        //todo make links have a flag that shows if they have already been chosen or not, and only pick links that have not yet been chosen
-        return getSingleLink(0);
+    //override so we can compare vs "eos" via .equals()
+    @Override
+    public String toString() {
+        return this.word;
     }
 }

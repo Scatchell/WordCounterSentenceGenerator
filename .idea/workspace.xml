@@ -78,7 +78,7 @@
       <file leaf-file-name="MyFileReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="10" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,7 @@
       <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="55" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33846155">
+            <state line="49" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.5692308">
               <folding />
             </state>
           </provider>
@@ -105,7 +105,7 @@
       <file leaf-file-name="WordRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,7 +123,7 @@
       <file leaf-file-name="Link.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Link.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,11 +153,11 @@
         <option value="$PROJECT_DIR$/test/WordTest.java" />
         <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
-        <option value="$PROJECT_DIR$/src/WordRepository.java" />
-        <option value="$PROJECT_DIR$/src/MyFileReader.java" />
         <option value="$PROJECT_DIR$/test/fileReaderTest.java" />
         <option value="$PROJECT_DIR$/src/WordComparator.java" />
         <option value="$PROJECT_DIR$/src/Link.java" />
+        <option value="$PROJECT_DIR$/src/WordRepository.java" />
+        <option value="$PROJECT_DIR$/src/MyFileReader.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
       </list>
     </option>
@@ -650,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/fileReaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="46" selection-start="360" selection-end="360" vertical-scroll-proportion="0.28076255">
@@ -671,20 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="16" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0">
@@ -692,16 +671,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Link.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="55" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33846155">
+        <state line="49" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.5692308">
           <folding />
         </state>
       </provider>

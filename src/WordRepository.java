@@ -23,7 +23,7 @@ public class WordRepository {
         return this.wordList;
     }
 
-    public void addOrUpdateWord(Word tempWord, String toAdd) {
+    public void addOrUpdateWord(Word tempWord, Word toAdd) {
         Integer wordPosition = getIndexPositionOfWord(tempWord);
         if (wordPosition == null) {
             addWord(tempWord);

@@ -21,16 +21,14 @@ public class Link {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Link link = (Link) o;
-
-        if (otherWord != null ? !otherWord.equals(link.otherWord) : link.otherWord != null) return false;
-
-        return true;
+        return rating == link.rating && !(otherWord != null ? !otherWord.equals(link.otherWord) : link.otherWord != null);
     }
 
     @Override
     public int hashCode() {
-        return otherWord != null ? otherWord.hashCode() : 0;
+        int result = otherWord != null ? otherWord.hashCode() : 0;
+        result = 31 * result + (int) (rating ^ (rating >>> 32));
+        return result;
     }
 }
