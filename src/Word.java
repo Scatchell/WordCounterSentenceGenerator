@@ -80,7 +80,7 @@ public class Word {
         Word returnWord;
         if (getSingleLink(0) == null) {
             return null;
-        } else if (getSingleLink(0).toString().equals("^&eos&^") && links.size() > 1) {
+        } else if ((getSingleLink(0).toString().equals("^&eos&^")) && links.size() > 1) {
             returnWord = getSingleLink(1);
             links.get(1).downRate();
             Collections.sort(this.links, new LinksComparator());

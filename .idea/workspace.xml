@@ -87,7 +87,7 @@
       <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="80" selection-start="723" selection-end="723" vertical-scroll-proportion="0.5595855">
+            <state line="82" column="67" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.046632126">
               <folding />
             </state>
           </provider>
@@ -662,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="20" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/LinkTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="42" selection-start="871" selection-end="871" vertical-scroll-proportion="0.9067358">
@@ -683,9 +676,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="20" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="80" selection-start="723" selection-end="723" vertical-scroll-proportion="0.5595855">
+        <state line="82" column="67" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.046632126">
           <folding />
         </state>
       </provider>
