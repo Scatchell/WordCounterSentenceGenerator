@@ -3,13 +3,6 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
-/**
-* Created by IntelliJ IDEA.
-* User: anthony
-* Date: 2/4/12
-* Time: 12:39 AM
-* To change this template use File | Settings | File Templates.
-*/
 public class WordTest {
     final String eos = "^&eos&^";
 

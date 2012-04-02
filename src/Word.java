@@ -1,14 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: anthony
- * Date: 1/4/12
- * Time: 8:54 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Word {
     String word;
     ArrayList<Link> links = new ArrayList<Link>();
@@ -53,9 +45,8 @@ public class Word {
         if (links.isEmpty()) {
             return null;
         } else {
-            for (Iterator<Link> iterator = links.iterator(); iterator.hasNext(); ) {
-                Link next = iterator.next();
-                if (next.otherWord == eos) {
+            for (Link next : links) {
+                if (next.otherWord.equals(eos)) {
                     return this.word;
                 }
 
@@ -71,8 +62,7 @@ public class Word {
         } else {
             int count = 0;
 
-            for (Iterator<Link> iterator = links.iterator(); iterator.hasNext(); ) {
-                Link link = iterator.next();
+            for (Link link : links) {
                 if (link.otherWord.equals(eos)) {
                     return count;
                 }
@@ -87,8 +77,7 @@ public class Word {
         int count = 0;
         Link otherLink = new Link(link);
 
-        for (Iterator<Link> iterator = links.iterator(); iterator.hasNext(); ) {
-            Link next = iterator.next();
+        for (Link next : links) {
             if (next.equals(otherLink)) {
                 return count;
             }
@@ -106,9 +95,8 @@ public class Word {
 
         Word word1 = (Word) o;
 
-        if (word != null ? !word.equals(word1.word) : word1.word != null) return false;
+        return !(word != null ? !word.equals(word1.word) : word1.word != null);
 
-        return true;
     }
 
     @Override

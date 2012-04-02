@@ -1,10 +1,4 @@
-/**
- * Created by IntelliJ IDEA.
- * User: anthony
- * Date: 1/4/12
- * Time: 3:47 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class Link {
     String otherWord;
 

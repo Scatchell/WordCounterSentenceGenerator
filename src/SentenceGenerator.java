@@ -1,13 +1,5 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: anthony
- * Date: 2/4/12
- * Time: 1:35 AM
- * To change this template use File | Settings | File Templates.
- */
 public class SentenceGenerator {
     ArrayList<Word> words = new ArrayList<Word>();
     int numOfWords = 10;
@@ -23,11 +15,10 @@ public class SentenceGenerator {
         for (int i = 0; i < numOfWords; i++) {
 
             if (i == numOfWords - 1) {
-                for (Iterator<Word> iterator = words.iterator(); iterator.hasNext(); ) {
-                    Word next = iterator.next();
+                for (Word next : words) {
                     Integer eosLink = next.hasEOSLink();
                     if (eosLink != null) {
-                        sb.append(next.word + ".");
+                        sb.append(next.word).append(".");
                         break;
                     }
                 }

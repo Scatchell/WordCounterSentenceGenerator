@@ -4,13 +4,6 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
-/**
-* Created by IntelliJ IDEA.
-* User: anthony
-* Date: 1/4/12
-* Time: 10:17 PM
-* To change this template use File | Settings | File Templates.
-*/
 public class MyFileReaderTest {
     MyFileReader fr;
     Word newWord;
@@ -39,7 +32,7 @@ public class MyFileReaderTest {
     public void testCheckWordExists() {
         fr.addOrUpdateWord(newWord, null);
 
-        assertNotNull(fr.checkWordExists(newWord));
+        assertNotNull(fr.getIndexPositionOfWord(newWord));
     }
 
 //    @Test
