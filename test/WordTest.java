@@ -40,7 +40,6 @@ public class WordTest {
         word.addLink(new Word("Link2"));
         word.addLink(new Word("Link3"));
         word.addLink(new Word(eos));
-
         assertNotNull(word.getEOSIndexOrNull());
     }
     
@@ -49,5 +48,15 @@ public class WordTest {
         Word word = new Word("Mark");
         word.addLink(new Word(eos));
         assertEquals(new Link(new Word(eos)), word.getNearestEOSLink());
+    }
+    
+    @Test
+    public void canGetTheBestLinkEvenWhenItIsNotTheFirstOneAdded() {
+        Word word = new Word("Mark");
+        word.addLink(new Word(eos));
+        word.addLink(new Word("Blah"));
+        word.addLink(new Word("Yay"));
+        word.addLink(new Word("Yay"));
+        assertEquals(new Word("Yay"), word.getBestLink());
     }
 }
