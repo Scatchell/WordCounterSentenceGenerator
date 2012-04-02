@@ -13,22 +13,24 @@ public class SentenceGenerator {
         StringBuilder sb = new StringBuilder();
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         // randomized starting word to get a better feel for what is happening
-        Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
-        for (int i = 0; i < numOfWords; i++) {
-            if (i == numOfWords - 1) {
-                for (Word next : wordsClone) {
-                    Integer eosLink = next.getEOSIndexOrNull();
-                    if (eosLink != null) {
-                        sb.append(next.word).append(".");
-                        break;
-                    }
-                }
-            } else {
-                //todo words.get has been moved to top.  Change so each link is searched for in the words list, and used as the next word.  Also need to remove words from array as they are used so they are not used twice
-                String link = word.getBestLink().toString();
-                sb.append(word.word + " " + link + " ");
-            }
-        }
+        Word word = wordsClone.get((int) (Math.random() * 5));
+//        for (int i = 0; i < numOfWords; i++) {
+//            if (i == numOfWords - 1) {
+//                for (Word next : wordsClone) {
+//                    Integer eosLink = next.getEOSIndexOrNull();
+//                    if (eosLink != null) {
+//                        sb.append(next.word).append(".");
+//                        break;
+//                    }
+//                }
+//            } else {
+//                //todo words.get has been moved to top.  Change so each link is searched for in the words list, and used as the next word.  Also need to remove words from array as they are used so they are not used twice
+//                String link = word.getBestLink().toString();
+//                sb.append(word.word + " " + link + " ");
+//            }
+//        }
+        String sentence = buildString(word, numOfWords);
+        sb.append(sentence);
         System.out.println(sb.toString());
     }
 
@@ -41,15 +43,17 @@ public class SentenceGenerator {
         }
     }
 
-    public String buildString(Word start) {
+    public String buildString(Word start, int counter) {
         StringBuilder sb = new StringBuilder();
         Word next = repository.getByName(start.toString());
         sb.append(next.toString());
         sb.append(" ");
-        while (next.getBestLink() != null) {
-            sb.append(next.getBestLink().toString());
-            sb.append(" ");
-            next = repository.getByName(next.getBestLink().toString());
+        for (int i = 0; i < counter; i++) {
+            if (next.getBestLink() != null) {
+                sb.append(next.getBestLink().toString());
+                sb.append(" ");
+                next = repository.getByName(next.getBestLink().toString());
+            }
         }
         return sb.toString();
 
