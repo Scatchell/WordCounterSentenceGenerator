@@ -11,15 +11,15 @@ public class WordTest {
     public void testAddLink() {
         Word word = new Word("Test");
         word.addLink(new Word("Link"));
-        assertNotNull(word.checkLinkExists(new Word("Link")));
+        assertNotNull(word.getIndexOfLinkOrNull(new Word("Link")));
     }
     
     @Test
     public void checkLinkExistsWorks() {
         Word word = new Word("Mark");
         word.addLink(new Word("Link"));
-        assertEquals(0, (Object) word.checkLinkExists(new Word("Link")));
-        assertEquals(null, (Object) word.checkLinkExists(new Word("Mary")));
+        assertEquals(0, (Object) word.getIndexOfLinkOrNull(new Word("Link")));
+        assertEquals(null, (Object) word.getIndexOfLinkOrNull(new Word("Mary")));
         word.addLink(new Word("Link"));
     }
 
@@ -28,7 +28,7 @@ public class WordTest {
         Word word = new Word("Test");
         word.addLink(new Word("Link"));
         word.addLink(new Word("Link"));
-        Integer linkPosition = word.checkLinkExists(new Word("Link"));
+        Integer linkPosition = word.getIndexOfLinkOrNull(new Word("Link"));
 
         assertEquals(2, word.getLinks().get(linkPosition).rating);
     }
@@ -42,6 +42,6 @@ public class WordTest {
         word.addLink(new Word("Link3"));
         word.addLink(new Word(eos));
 
-        assertNotNull(word.hasEOSLink());
+        assertNotNull(word.getEOSIndexOrNull());
     }
 }

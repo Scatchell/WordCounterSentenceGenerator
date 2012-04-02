@@ -11,7 +11,7 @@ public class Word {
     }
 
     public void addLink(Word otherWord) {
-        Integer linkPosition = checkLinkExists(otherWord);
+        Integer linkPosition = getIndexOfLinkOrNull(otherWord);
         if (linkPosition != null) {
             this.links.get(linkPosition).plusRate();
         } else {
@@ -49,7 +49,7 @@ public class Word {
         return null;
     }
 
-    public Integer hasEOSLink() {
+    public Integer getEOSIndexOrNull() {
         if (links.isEmpty()) {
             return null;
         } else {
@@ -64,7 +64,7 @@ public class Word {
         return null;
     }
 
-    public Integer checkLinkExists(Word link) {
+    public Integer getIndexOfLinkOrNull(Word link) {
         int count = 0;
         Link otherLink = new Link(link);
         for (Link next : links) {

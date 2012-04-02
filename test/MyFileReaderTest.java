@@ -17,15 +17,14 @@ public class MyFileReaderTest {
     @Test
     public void testAddNewWord() {
         fr.wordRepository.addOrUpdateWord(newWord, null);
-
         assertEquals(true, fr.wordRepository.getWordList().contains(newWord));
     }
     
     @Test
     public void testUpdateWord() {
         fr.wordRepository.addOrUpdateWord(newWord, null);
-
         fr.wordRepository.addOrUpdateWord(newWord, new Word("Link"));
+        assertEquals(0, (Object) fr.wordRepository.getWordList().get(fr.wordRepository.getIndexPositionOfWord(newWord)).getIndexOfLinkOrNull(new Word("Link")));
     }
 
     @Test

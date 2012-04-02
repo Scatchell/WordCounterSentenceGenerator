@@ -16,7 +16,7 @@ public class SentenceGenerator {
 
             if (i == numOfWords - 1) {
                 for (Word next : words) {
-                    Integer eosLink = next.hasEOSLink();
+                    Integer eosLink = next.getEOSIndexOrNull();
                     if (eosLink != null) {
                         sb.append(next.word).append(".");
                         break;
