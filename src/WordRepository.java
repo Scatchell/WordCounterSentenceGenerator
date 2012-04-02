@@ -55,11 +55,6 @@ public class WordRepository {
                 return wordList.get(i);
             }
         }
-//        for (Word word : wordList) {
-//            if (word.toString().equals(wordName)) {
-//                return word;
-//            }
-//        }
         return null;
     }
 

@@ -78,17 +78,18 @@ public class Word {
 
     public Word getBestLink() {
         Word returnWord;
-        if (getSingleLink(0) == null) {
+        int index = (int) ((Math.random() * this.links.size() / 3));
+        if (getSingleLink(index) == null) {
             return null;
-        } else if ((getSingleLink(0).toString().equals("^&eos&^")) && links.size() > 1) {
-            returnWord = getSingleLink(1);
-            links.get(1).downRate();
+        } else if ((getSingleLink(index).toString().equals("^&eos&^")) && links.size() > 1) {
+            returnWord = getSingleLink(index + 1);
+            links.get(index + 1).downRate();
             Collections.sort(this.links, new LinksComparator());
-        } else if (getSingleLink(0).toString().equals("^&eos&^")) {
+        } else if (getSingleLink(index).toString().equals("^&eos&^")) {
             return null;
         } else {
-            returnWord = getSingleLink(0);
-            links.get(0).downRate();
+            returnWord = getSingleLink(index);
+            links.get(index).downRate();
             Collections.sort(this.links, new LinksComparator());
         }
         return returnWord;

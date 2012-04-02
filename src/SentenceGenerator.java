@@ -28,16 +28,20 @@ public class SentenceGenerator {
         Word next = repository.getByName(start.toString());
         sb.append(next.toString());
         sb.append(" ");
+        ArrayList<Word> usedWords = new ArrayList<Word>();
+        usedWords.add(next);
         for (int i = 0; i < counter; i++) {
             if (i == counter - 1 ) {
                 if (repository.getLikelyEOSWord(next) == null) {
                     sb.append("EOS NOT FOUND");
                     break;
                 } else {
+                    usedWords.add(repository.getLikelyEOSWord(next));
                     sb.append(repository.getLikelyEOSWord(next).toString()).append(".");
                     break;
                 }
             } else if (next.getBestLink() != null) {
+                usedWords.add(next.getBestLink());
                 sb.append(next.getBestLink().toString());
                 sb.append(" ");
                 next = repository.getByName(next.getBestLink().toString());
@@ -45,6 +49,11 @@ public class SentenceGenerator {
                 // sb.append("NO FOLLOWING LINK");  <- commenting out for now
                 sb.append("is the end.");
                 break;
+            }
+        }
+        for (Word word : usedWords) {
+            for (Link link : word.links) {
+                link.restoreRate();
             }
         }
         return cullDuplicates(sb.toString());
