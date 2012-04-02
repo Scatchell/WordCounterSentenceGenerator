@@ -55,7 +55,7 @@ public class SentenceGenerator {
         ArrayList<String> returnList = new ArrayList<String>();
         for (int i = 0; i < words.length; i++) {
             if (i >= 1 && (words[i].equals(words[i - 1]))) {
-                // ignore - do not add back to back words
+                // ignore - do not add consecutive identical words
             } else {
                 returnList.add(words[i]);
             }
