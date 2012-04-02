@@ -75,19 +75,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="20" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+            <state line="49" column="43" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.5595855">
+              <folding>
+                <element signature="e#2043#2051#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyFileReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="32" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SentenceGeneratorTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="5" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Word.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="67" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.046632126">
+            <state line="81" column="22" selection-start="2077" selection-end="2077" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,12 +158,12 @@
         <option value="$PROJECT_DIR$/test/MyFileReaderTest.java" />
         <option value="$PROJECT_DIR$/test/WordTest.java" />
         <option value="$PROJECT_DIR$/src/WordRepository.java" />
-        <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
         <option value="$PROJECT_DIR$/testFile" />
         <option value="$PROJECT_DIR$/src/Link.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
+        <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
       </list>
     </option>
   </component>
@@ -623,28 +645,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="5" selection-start="1629" selection-end="1629" vertical-scroll-proportion="1.0207254">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/WordRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="40" selection-start="2307" selection-end="2307" vertical-scroll-proportion="0.3134715">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.28756475">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,17 +682,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="20" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+        <state line="81" column="22" selection-start="2077" selection-end="2077" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="67" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.046632126">
+        <state line="43" column="5" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="32" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="43" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.5595855">
+          <folding>
+            <element signature="e#2043#2051#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

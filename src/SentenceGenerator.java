@@ -47,6 +47,28 @@ public class SentenceGenerator {
                 break;
             }
         }
+        return cullDuplicates(sb.toString());
+    }
+
+    public String cullDuplicates(String sentence) {
+        String[] words = sentence.split(" ");
+        ArrayList<String> returnList = new ArrayList<String>();
+        for (int i = 0; i < words.length; i++) {
+            if (i >= 1 && (words[i].equals(words[i - 1]))) {
+                // ignore - do not add back to back words
+            } else {
+                returnList.add(words[i]);
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < returnList.size(); i++) {
+            if (i == (returnList.size() - 1)) {
+                sb.append(returnList.get(i));
+            } else {
+                sb.append(returnList.get(i));
+                sb.append(" ");
+            }
+        }
         return sb.toString();
     }
 }
