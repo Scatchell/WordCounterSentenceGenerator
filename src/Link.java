@@ -11,6 +11,10 @@ public class Link {
     public void plusRate() {
         this.rating++;
     }
+    
+    public void downRate() {
+        this.rating--;
+    }
 
     @Override
     public String toString() {

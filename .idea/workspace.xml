@@ -98,7 +98,16 @@
       <file leaf-file-name="Word.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="24" selection-start="2340" selection-end="2340" vertical-scroll-proportion="0.79545456">
+            <state line="87" column="30" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.59090906">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Link.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Link.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="21" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,7 +116,7 @@
       <file leaf-file-name="WordRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0">
+            <state line="14" column="24" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -154,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/WordComparator.java" />
         <option value="$PROJECT_DIR$/src/MyFileReader.java" />
         <option value="$PROJECT_DIR$/test/LinkTest.java" />
-        <option value="$PROJECT_DIR$/src/Link.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/test/MyFileReaderTest.java" />
         <option value="$PROJECT_DIR$/test/WordTest.java" />
@@ -164,6 +172,7 @@
         <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
+        <option value="$PROJECT_DIR$/src/Link.java" />
       </list>
     </option>
   </component>
@@ -645,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Link.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/WordTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="44" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.812987">
@@ -700,14 +702,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.0">
+        <state line="14" column="24" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="21" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="24" selection-start="2340" selection-end="2340" vertical-scroll-proportion="0.79545456">
+        <state line="87" column="30" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.59090906">
           <folding />
         </state>
       </provider>
