@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class SentenceGenerator {
-    ArrayList<Word> words = new ArrayList<Word>();
+    ArrayList<Word> words;
     int numOfWords = 10;
     
     public SentenceGenerator(ArrayList<Word> words) {
@@ -29,5 +29,14 @@ public class SentenceGenerator {
             }
         }
         System.out.println(sb.toString());
+    }
+
+
+    public Word getNextLink(Word first) {
+        if (first.getBestLink() != null) {
+            return first.getBestLink();
+        } else {
+            return Word.endOfSentence;
+        }
     }
 }
