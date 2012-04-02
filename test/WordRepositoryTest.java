@@ -25,7 +25,9 @@ public class WordRepositoryTest {
     public void allMethodsWorkAsExpected() {
         wordRepository.addWord(word);
         assertEquals(true, wordRepository.getWordList().contains(word));
+        assertEquals(0, (Object) wordRepository.getIndexPositionOfWord(word));
         wordRepository.addOrUpdateWord(word, linkWord);
         assertEquals(0, (Object) wordRepository.getWordList().get(0).getIndexOfLinkOrNull(linkWord));
+        assertEquals(0, (Object) wordRepository.getIndexPositionOfWord(word));
     }
 }

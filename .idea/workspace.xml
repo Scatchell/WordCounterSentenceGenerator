@@ -114,7 +114,7 @@
       <file leaf-file-name="WordRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
+            <state line="34" column="0" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,7 +123,7 @@
       <file leaf-file-name="WordRepositoryTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/WordRepositoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="69" selection-start="832" selection-end="832" vertical-scroll-proportion="0.53246754">
+            <state line="30" column="75" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.625974">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -685,14 +685,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WordRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
+        <state line="34" column="0" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/WordRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="69" selection-start="832" selection-end="832" vertical-scroll-proportion="0.53246754">
+        <state line="30" column="75" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.625974">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
