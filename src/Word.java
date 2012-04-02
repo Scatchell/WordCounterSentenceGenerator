@@ -102,4 +102,14 @@ public class Word {
     public String toString() {
         return this.word;
     }
+
+    public boolean hasEOSLink() {
+        for (Link link : links) {
+            Word x = link.otherWord;
+            if (x.equals(new Word(eos))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

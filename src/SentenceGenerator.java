@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class SentenceGenerator {
     WordRepository repository;
-    int numOfWords = 10;
+    public int numOfWords = 10;
     final static Word endOfSentence = new Word("^&eos&^");
     
     public SentenceGenerator(WordRepository repository) {
@@ -49,8 +49,8 @@ public class SentenceGenerator {
         sb.append(next.toString());
         sb.append(" ");
         for (int i = 0; i < counter; i++) {
-            if (i == counter - 1 ){
-                sb.append(endOfSentence);
+            if (i == counter - 1 ) {
+                sb.append(repository.getLikelyEOSWord(next).toString());
                 break;
             } else if (next.getBestLink() != null) {
                 sb.append(next.getBestLink().toString());

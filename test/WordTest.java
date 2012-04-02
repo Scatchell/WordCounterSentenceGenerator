@@ -59,4 +59,11 @@ public class WordTest {
         word.addLink(new Word("Yay"));
         assertEquals(new Word("Yay"), word.getBestLink());
     }
+    
+    @Test
+    public void canDetermineWhenWordHasEosLink() {
+        Word word = new Word("Mark");
+        word.addLink(new Word(eos));
+        assertEquals(true, word.hasEOSLink());
+    }
 }

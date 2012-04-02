@@ -71,4 +71,20 @@ public class WordRepositoryTest {
         wordRepository.addOrUpdateWord(foo, bar);
         assertEquals(bar, wordRepository.getByName("foo").getBestLink());
     }
+    
+    @Test
+    public void canGiveLikelyEOSTerms() {
+        Word foo = new Word("foo");
+        Word bar = new Word("bar");
+        Word moo = new Word("moo");
+        Word fah = new Word("fah");
+        Word baz = new Word("baz");
+        wordRepository.addOrUpdateWord(foo, bar);
+        wordRepository.addOrUpdateWord(bar, baz);
+        wordRepository.addOrUpdateWord(bar, moo);
+        wordRepository.addOrUpdateWord(moo, fah);
+        wordRepository.addOrUpdateWord(bar, moo);
+        wordRepository.addOrUpdateWord(baz, SentenceGenerator.endOfSentence);
+        assertEquals(baz, wordRepository.getLikelyEOSWord(bar));
+    }
 }

@@ -57,4 +57,15 @@ public class WordRepository {
         }
         return null;
     }
+
+    public Word getLikelyEOSWord(Word word) {
+        Word toBeChecked = getByName(word.toString());
+        for (Link link : toBeChecked.links) {
+            Word test = getByName(link.otherWord.toString());
+            if (test.hasEOSLink()) {
+               return test;
+            }
+        }
+        return null;
+    }
 }
