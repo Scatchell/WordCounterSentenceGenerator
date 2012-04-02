@@ -78,7 +78,9 @@ public class Word {
 
     public Word getBestLink() {
         //todo make links have a flag that shows if they have already been chosen or not, and only pick links that have not yet been chosen
-        if (getSingleLink(0).toString().equals("^&eos&^")) {
+        if (getSingleLink(0).toString().equals("^&eos&^") && links.size() > 1) {
+            return getSingleLink(1);
+        } else if (getSingleLink(0).toString().equals("^&eos&^")) {
             return null;
         }
         return getSingleLink(0);
