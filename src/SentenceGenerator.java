@@ -10,12 +10,12 @@ public class SentenceGenerator {
     
     public void generate() {
         StringBuilder sb = new StringBuilder();
-        //todo clone words to a temp array so items can be removed without destroying original
-        Word word = words.get(0);
+        ArrayList<Word> wordsClone = (ArrayList<Word>) this.words.clone();
+        // randomized starting word to get a better feel for what is happening
+        Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
         for (int i = 0; i < numOfWords; i++) {
-
             if (i == numOfWords - 1) {
-                for (Word next : words) {
+                for (Word next : wordsClone) {
                     Integer eosLink = next.getEOSIndexOrNull();
                     if (eosLink != null) {
                         sb.append(next.word).append(".");
@@ -28,7 +28,6 @@ public class SentenceGenerator {
                 sb.append(word.word + " " + link + " ");
             }
         }
-
         System.out.println(sb.toString());
     }
 }
