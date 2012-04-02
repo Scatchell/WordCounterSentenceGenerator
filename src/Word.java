@@ -54,13 +54,11 @@ public class Word {
             return null;
         } else {
             int count = 0;
-
             for (Link link : links) {
-                if (link.otherWord.equals(eos)) {
+                if (link.otherWord.toString().equals(eos)) {
                     return count;
                 }
                 count++;
-
             }
         }
         return null;

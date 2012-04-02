@@ -10,29 +10,29 @@ public class MyFileReaderTest {
 
     @Before
     public void setUp() {
-        fr = new MyFileReader();
+        fr = new MyFileReader(WordRepository.getInstance());
         newWord = new Word("Test");
     }
 
     @Test
     public void testAddNewWord() {
-        fr.addOrUpdateWord(newWord, null);
+        fr.wordRepository.addOrUpdateWord(newWord, null);
 
-        assertEquals(true, fr.words.contains(newWord));
+        assertEquals(true, fr.wordRepository.getWordList().contains(newWord));
     }
     
     @Test
     public void testUpdateWord() {
-        fr.addOrUpdateWord(newWord, null);
+        fr.wordRepository.addOrUpdateWord(newWord, null);
 
-        fr.addOrUpdateWord(newWord, "Link");
+        fr.wordRepository.addOrUpdateWord(newWord, new Word("Link"));
     }
 
     @Test
     public void testCheckWordExists() {
-        fr.addOrUpdateWord(newWord, null);
+        fr.wordRepository.addOrUpdateWord(newWord, null);
 
-        assertNotNull(fr.getIndexPositionOfWord(newWord));
+        assertNotNull(fr.wordRepository.getIndexPositionOfWord(newWord));
     }
 
 //    @Test

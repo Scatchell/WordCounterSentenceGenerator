@@ -10,17 +10,25 @@ public class WordTest {
     @Test
     public void testAddLink() {
         Word word = new Word("Test");
-        word.addLink("Link");
-
-        assertNotNull(word.checkLinkExists("Link"));
+        word.addLink(new Word("Link"));
+        assertNotNull(word.checkLinkExists(new Word("Link")));
+    }
+    
+    @Test
+    public void checkLinkExistsWorks() {
+        Word word = new Word("Mark");
+        word.addLink(new Word("Link"));
+        assertEquals(0, (Object) word.checkLinkExists(new Word("Link")));
+        assertEquals(null, (Object) word.checkLinkExists(new Word("Mary")));
+        word.addLink(new Word("Link"));
     }
 
     @Test
     public void testIncrementLink() {
         Word word = new Word("Test");
-        word.addLink("Link");
-        word.addLink("Link");
-        Integer linkPosition = word.checkLinkExists("Link");
+        word.addLink(new Word("Link"));
+        word.addLink(new Word("Link"));
+        Integer linkPosition = word.checkLinkExists(new Word("Link"));
 
         assertEquals(2, word.getLinks().get(linkPosition).rating);
     }
@@ -28,11 +36,11 @@ public class WordTest {
     @Test
     public void hasEOSLink() {
         Word word = new Word("Word1");
-        word.addLink("Link1");
-        word.addLink("Link1");
-        word.addLink("Link2");
-        word.addLink("Link2");
-        word.addLink(eos);
+        word.addLink(new Word("Link1"));
+        word.addLink(new Word("Link1"));
+        word.addLink(new Word("Link2"));
+        word.addLink(new Word("Link3"));
+        word.addLink(new Word(eos));
 
         assertNotNull(word.hasEOSLink());
     }

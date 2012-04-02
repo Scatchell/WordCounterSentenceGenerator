@@ -1,7 +1,7 @@
 
 public class Link {
-    Word otherWord;
-    long rating;
+    public Word otherWord;
+    public long rating;
 
     public Link(Word otherWord) {
         this.otherWord = otherWord;
@@ -14,7 +14,7 @@ public class Link {
 
     @Override
     public String toString() {
-        return this.otherWord + " : " + this.rating;
+        return this.otherWord.toString() + " : " + this.rating;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Link {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Link link = (Link) o;
-        return rating == link.rating && !(otherWord != null ? !otherWord.equals(link.otherWord) : link.otherWord != null);
+        return !(otherWord != null ? !otherWord.equals(link.otherWord) : link.otherWord != null);
     }
 
     @Override
