@@ -16,7 +16,9 @@ public class WordRepository {
     }
 
     public void addWord(Word word) {
-        this.wordList.add(word);
+        if (!this.wordList.contains(word)) {
+            this.wordList.add(word);
+        }
     }
 
     public ArrayList<Word> getWordList() {
