@@ -38,5 +38,6 @@ public class LinkTest {
         assertEquals(3, link.rating);
         link.downRate();
         assertEquals(3, link.highestRating);
+        assert(link.rating < 3);
     }
 }

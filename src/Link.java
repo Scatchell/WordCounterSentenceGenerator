@@ -17,7 +17,7 @@ public class Link {
     }
     
     public void downRate() {
-        this.rating -= (int) (Math.random() * this.rating) + 1;
+        this.rating -= (int) ((Math.random() * this.rating) + 1);
     }
     
     public void restoreRate() {
@@ -36,7 +36,7 @@ public class Link {
 
         Link link = (Link) o;
 
-        return otherWord.toString().equals(((Link) o).otherWord.toString());
+        return otherWord.toString().equals(((Link) link).otherWord.toString());
     }
 
     @Override

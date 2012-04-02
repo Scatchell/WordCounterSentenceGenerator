@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8971485-aa95-4ed2-b688-cf7c27707c48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Link.java" afterPath="$PROJECT_DIR$/src/Link.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/LinkTest.java" afterPath="$PROJECT_DIR$/test/LinkTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/MyFileReaderTest.java" afterPath="$PROJECT_DIR$/test/MyFileReaderTest.java" />
     </list>
     <ignored path="WordInformation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,19 +109,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Link.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Link.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Link.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+            <state line="37" column="0" selection-start="903" selection-end="903" vertical-scroll-proportion="0.9430052">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LinkTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/LinkTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="43" selection-start="939" selection-end="939" vertical-scroll-proportion="0.69899666">
+            <state line="17" column="42" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,17 +147,17 @@
         <option value="$PROJECT_DIR$/test/fileReaderTest.java" />
         <option value="$PROJECT_DIR$/src/WordComparator.java" />
         <option value="$PROJECT_DIR$/src/MyFileReader.java" />
-        <option value="$PROJECT_DIR$/test/MyFileReaderTest.java" />
         <option value="$PROJECT_DIR$/test/WordTest.java" />
         <option value="$PROJECT_DIR$/testFile" />
         <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
         <option value="$PROJECT_DIR$/test/WordRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/WordRepository.java" />
-        <option value="$PROJECT_DIR$/src/Link.java" />
         <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/test/LinkTest.java" />
+        <option value="$PROJECT_DIR$/src/Link.java" />
+        <option value="$PROJECT_DIR$/test/MyFileReaderTest.java" />
       </list>
     </option>
   </component>
@@ -264,24 +265,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest">
-    <configuration default="false" name="UI" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="UI" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="WordCounterSentenceGenerator" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyFileReaderTest">
     <configuration default="false" name="WordRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="WordCounterSentenceGenerator" />
@@ -358,6 +342,29 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LinkTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyFileReaderTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="WordCounterSentenceGenerator" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyFileReaderTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -495,11 +502,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.UI" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.WordRepositoryTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SentenceGeneratorTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.WordTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LinkTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.WordRepositoryTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SentenceGeneratorTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WordTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LinkTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MyFileReaderTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -550,7 +557,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20333838" sideWeight="0.6602564" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33974358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33974358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -597,7 +604,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Determined that speed lag is a result of the file read, that's it - otherwise it runs fast.  Added in a prompt: pressing enter now displays a new random sentence.  Pretty cool actually :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="new test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -613,6 +620,7 @@
     <MESSAGE value="more changes" />
     <MESSAGE value="The following changes: 1) decerement value of links is now a random number between 1 and the current value of the link.  2) links are reincremented after each sentence use by a random number between their current rating and their highest historical rating. 3) instead of taking the top choice link, we take a random link in the top 33% of the ordered list of links. 4) added some speed optimizations in for loops, although they need more work" />
     <MESSAGE value="Determined that speed lag is a result of the file read, that's it - otherwise it runs fast.  Added in a prompt: pressing enter now displays a new random sentence.  Pretty cool actually :)" />
+    <MESSAGE value="new test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -630,11 +638,6 @@
     <entry file="file://$PROJECT_DIR$/src/WordComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="0.54180604" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/MyFileReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="1355" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/WordTest.java">
@@ -700,16 +703,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Link.java">
+    <entry file="file://$PROJECT_DIR$/test/MyFileReaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="15" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="0.6735751">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/LinkTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="43" selection-start="939" selection-end="939" vertical-scroll-proportion="0.69899666">
+        <state line="17" column="42" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="903" selection-end="903" vertical-scroll-proportion="0.9430052">
           <folding />
         </state>
       </provider>
