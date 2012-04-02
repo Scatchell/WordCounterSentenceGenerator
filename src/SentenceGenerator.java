@@ -49,7 +49,10 @@ public class SentenceGenerator {
         sb.append(next.toString());
         sb.append(" ");
         for (int i = 0; i < counter; i++) {
-            if (next.getBestLink() != null) {
+            if (i == counter - 1 ){
+                sb.append(endOfSentence);
+                break;
+            } else if (next.getBestLink() != null) {
                 sb.append(next.getBestLink().toString());
                 sb.append(" ");
                 next = repository.getByName(next.getBestLink().toString());
