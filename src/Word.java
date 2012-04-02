@@ -36,13 +36,13 @@ public class Word {
         }
     }
 
-    public String getNearestEOSLink() {
+    public Link getNearestEOSLink() {
         if (links.isEmpty()) {
             return null;
         } else {
             for (Link next : links) {
                 if (next.otherWord.toString().equals(eos)) {
-                    return this.word;
+                    return next;
                 }
             }
         }

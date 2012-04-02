@@ -6,7 +6,6 @@ import static junit.framework.Assert.assertNotNull;
 public class WordTest {
     final String eos = "^&eos&^";
 
-
     @Test
     public void testAddLink() {
         Word word = new Word("Test");
@@ -43,5 +42,12 @@ public class WordTest {
         word.addLink(new Word(eos));
 
         assertNotNull(word.getEOSIndexOrNull());
+    }
+    
+    @Test
+    public void canGetNearestEOSLink() {
+        Word word = new Word("Mark");
+        word.addLink(new Word(eos));
+        assertEquals(new Link(new Word(eos)), word.getNearestEOSLink());
     }
 }
