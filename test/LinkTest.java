@@ -29,4 +29,14 @@ public class LinkTest {
         Link bar = new Link(new Word("bar"));
         assertEquals(false, foo.equals(bar));
     }
+    
+    @Test
+    public void linkRetainsHighestScore() {
+        Link link = new Link(new Word("foo"));
+        link.plusRate();
+        link.plusRate();
+        assertEquals(3, link.rating);
+        link.downRate();
+        assertEquals(3, link.highestRating);
+    }
 }
