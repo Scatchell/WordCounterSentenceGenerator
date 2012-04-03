@@ -33,16 +33,16 @@ public class SentenceGenerator {
         sb.append(" ");
         ArrayList<Word> usedWords = new ArrayList<Word>();
         usedWords.add(next);
+        iterateAndSelectWords(counter, sb, next, usedWords);
+        restoreLinkRates(usedWords);
+        return cullDuplicatesAndCreateString(sb.toString());
+    }
+
+    private void iterateAndSelectWords(int counter, StringBuilder sb, Word next, ArrayList<Word> usedWords) {
         for (int i = 0; i < counter; i++) {
             if (i == counter - 1 ) {
-                if (repository.getLikelyEOSWord(next) == null) {
-                    sb.append("EOS NOT FOUND");
-                    break;
-                } else {
-                    usedWords.add(repository.getLikelyEOSWord(next));
-                    sb.append(repository.getLikelyEOSWord(next).toString()).append(".");
-                    break;
-                }
+                guardAgainstNull(sb, next, usedWords);
+                break;
             } else if (next.getBestLink() != null) {
                 usedWords.add(next.getBestLink());
                 sb.append(next.getBestLink().toString());
@@ -54,17 +54,35 @@ public class SentenceGenerator {
                 break;
             }
         }
+    }
+
+    private void guardAgainstNull(StringBuilder sb, Word next, ArrayList<Word> usedWords) {
+        if (repository.getLikelyEOSWord(next) == null) {
+            sb.append("EOS NOT FOUND");
+        } else {
+            usedWords.add(repository.getLikelyEOSWord(next));
+            sb.append(repository.getLikelyEOSWord(next).toString()).append(".");
+        }
+    }
+
+    private void restoreLinkRates(ArrayList<Word> usedWords) {
         for (Word word : usedWords) {
             for (Link link : word.links) {
                 link.restoreRate();
             }
         }
-        return cullDuplicates(sb.toString());
     }
 
-    public String cullDuplicates(String sentence) {
+    public String cullDuplicatesAndCreateString(String sentence) {
         String[] words = sentence.split(" ");
         ArrayList<String> returnList = new ArrayList<String>();
+        removeDupes(words, returnList);
+        StringBuilder sb = new StringBuilder();
+        addNonDuplicateWords(returnList, sb);
+        return sb.toString().replaceAll(" i ", " I ");
+    }
+
+    private void removeDupes(String[] words, ArrayList<String> returnList) {
         for (int i = 0; i < words.length; i++) {
             if (i >= 1 && (words[i].equals(words[i - 1]))) {
                 // ignore - do not add consecutive identical words
@@ -72,7 +90,9 @@ public class SentenceGenerator {
                 returnList.add(words[i]);
             }
         }
-        StringBuilder sb = new StringBuilder();
+    }
+
+    private void addNonDuplicateWords(ArrayList<String> returnList, StringBuilder sb) {
         for (int i = 0; i < returnList.size(); i++) {
             if (i == (returnList.size() - 1)) {
                 sb.append(returnList.get(i));
@@ -81,6 +101,5 @@ public class SentenceGenerator {
                 sb.append(" ");
             }
         }
-        return sb.toString().replaceAll(" i ", " I ");
     }
 }
