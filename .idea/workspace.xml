@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f8971485-aa95-4ed2-b688-cf7c27707c48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Link.java" afterPath="$PROJECT_DIR$/src/Link.java" />
     </list>
     <ignored path="WordInformation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,7 +129,7 @@
       <file leaf-file-name="Link.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Link.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="64" selection-start="465" selection-end="465" vertical-scroll-proportion="0.53367877">
+            <state line="16" column="4" selection-start="371" selection-end="371" vertical-scroll-proportion="0.44041452">
               <folding />
             </state>
           </provider>
@@ -182,7 +181,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
-    <option name="y" value="-5" />
+    <option name="y" value="-773" />
     <option name="width" value="1368" />
     <option name="height" value="774" />
   </component>
@@ -557,7 +556,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-5" width="1368" height="774" extended-state="6" />
+    <frame x="-1" y="-773" width="1368" height="774" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -753,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Link.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="64" selection-start="465" selection-end="465" vertical-scroll-proportion="0.53367877">
+        <state line="16" column="4" selection-start="371" selection-end="371" vertical-scroll-proportion="0.44041452">
           <folding />
         </state>
       </provider>
