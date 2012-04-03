@@ -78,10 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SentenceGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="8" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.0">
+            <state line="81" column="8" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.43431637">
               <folding>
                 <element signature="e#1304#1310#0" expanded="true" />
               </folding>
@@ -89,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SentenceGeneratorTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SentenceGeneratorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="22" selection-start="2689" selection-end="2689" vertical-scroll-proportion="0.7104558">
+            <state line="68" column="9" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/Link.java" />
         <option value="$PROJECT_DIR$/src/MyFileReader.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
-        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
         <option value="$PROJECT_DIR$/test/SentenceGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/SentenceGenerator.java" />
       </list>
     </option>
   </component>
@@ -248,7 +248,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in WordCounterSentenceGenerator">
+  <component name="RunManager" selected="Application.UI">
     <configuration default="false" name="MyFileReaderTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="WordCounterSentenceGenerator" />
@@ -519,7 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -581,7 +581,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="end-of-line &quot;i&quot; are now correctly capitalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some &quot;an&quot; for &quot;a&quot; substitutions" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -608,6 +608,7 @@
     <MESSAGE value="formatting" />
     <MESSAGE value="further refactoring" />
     <MESSAGE value="end-of-line &quot;i&quot; are now correctly capitalized" />
+    <MESSAGE value="added some &quot;an&quot; for &quot;a&quot; substitutions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -704,19 +705,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
+    <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="8" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1304#1310#0" expanded="true" />
-          </folding>
+        <state line="68" column="9" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SentenceGeneratorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/SentenceGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="22" selection-start="2689" selection-end="2689" vertical-scroll-proportion="0.7104558">
-          <folding />
+        <state line="81" column="8" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.43431637">
+          <folding>
+            <element signature="e#1304#1310#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

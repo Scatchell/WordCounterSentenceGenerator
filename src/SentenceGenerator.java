@@ -79,7 +79,7 @@ public class SentenceGenerator {
         removeDupes(words, returnList);
         StringBuilder sb = new StringBuilder();
         addNonDuplicateWords(returnList, sb);
-        return sb.toString().replaceAll(" i ", " I ").replaceAll(" a a", " an a").replaceAll(" a o", " an o").replaceAll(" a i", " an i").replaceAll(" a e", " an e").replaceAll(" a u", " an u");
+        return sb.toString().replaceAll(" a a", " an a").replaceAll(" a o", " an o").replaceAll(" a i", " an i").replaceAll(" i ", " I ").replaceAll(" a e", " an e").replaceAll(" a u", " an u");
     }
 
     private void removeDupes(String[] words, ArrayList<String> returnList) {
