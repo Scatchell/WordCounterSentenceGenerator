@@ -1,13 +1,6 @@
 import java.util.Comparator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: anthony
- * Date: 1/4/12
- * Time: 12:27 AM
- * To change this template use File | Settings | File Templates.
- */
-public class LinksComparator implements Comparator {
+public class LinkComparator implements Comparator {
     @Override
     public int compare(Object o, Object o1) {
         Link a = (Link) o;

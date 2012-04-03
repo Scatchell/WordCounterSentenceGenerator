@@ -40,5 +40,4 @@ public class MyFileReader {
         }
         return this.wordRepository.getWordList();
     }
-
 }

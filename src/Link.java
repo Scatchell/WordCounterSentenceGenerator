@@ -1,4 +1,3 @@
-
 public class Link {
     public Word otherWord;
     public long rating;

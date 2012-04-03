@@ -17,7 +17,7 @@ public class Word {
         } else {
             this.links.add(new Link(otherWord));
         }
-        Collections.sort(this.links, new LinksComparator());
+        Collections.sort(this.links, new LinkComparator());
     }
 
     private String trimWord(String word) {
@@ -84,13 +84,13 @@ public class Word {
         } else if ((getSingleLink(index).toString().equals("^&eos&^")) && links.size() > 1) {
             returnWord = getSingleLink(index + 1);
             links.get(index + 1).downRate();
-            Collections.sort(this.links, new LinksComparator());
+            Collections.sort(this.links, new LinkComparator());
         } else if (getSingleLink(index).toString().equals("^&eos&^")) {
             return null;
         } else {
             returnWord = getSingleLink(index);
             links.get(index).downRate();
-            Collections.sort(this.links, new LinksComparator());
+            Collections.sort(this.links, new LinkComparator());
         }
         return returnWord;
     }
