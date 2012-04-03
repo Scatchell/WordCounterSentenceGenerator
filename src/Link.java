@@ -16,7 +16,7 @@ public class Link {
     }
     
     public void downRate() {
-        this.rating -= (int) (((Math.random() * this.rating) / 2)+ 1);
+        this.rating -= (int) ((Math.random() * (this.rating / 2)) + 1);
     }
     
     public void restoreRate() {

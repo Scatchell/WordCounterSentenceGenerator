@@ -23,16 +23,29 @@ public class UI {
 
     private static void runLoop(SentenceGenerator sg) {
         while (true) {
-            System.out.print("****************************************************");
+            System.out.print("***************Re-Generate from: ");
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String name = null;
+            String userInput;
+            Integer userSelection;
+
             try {
-                name = br.readLine();
+                userInput = br.readLine();
+                if (userInput.equals("exit")) {
+                    System.out.println("Goodbye.");
+                    break;
+                }
+                userSelection = Integer.parseInt(userInput);
+                sg.regeneratePartialSentence(userSelection);
             } catch (IOException e) {
                 System.out.println("Error!");
                 System.exit(1);
+            } catch (NumberFormatException e) {
+                System.out.println("<Number cannot be parsed, generating completely new sentence...>");
+                sg.generate();
             }
-            sg.generate();
+            
+            
+
         }
     }
 }
