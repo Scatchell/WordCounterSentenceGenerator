@@ -21,7 +21,7 @@ public class SentenceGenerator {
 
     public Word getNextLink(Word first) {
         Word check = repository.getByName(first.toString());
-        return check.getBestLink();
+        return check.getBestLink(0);
     }
 
     public String buildString(Word start, int counter) {
@@ -40,20 +40,25 @@ public class SentenceGenerator {
 
     private void iterateAndSelectWords(int counter, StringBuilder sb, Word next, ArrayList<Word> usedWords) {
         for (int i = 0; i < counter; i++) {
+            int priorityCounter = priorityCounterGenerate();
             if (i == counter - 1 ) {
                 guardAgainstNull(sb, next, usedWords);
                 break;
-            } else if (next.getBestLink() != null) {
-                usedWords.add(next.getBestLink());
-                sb.append(next.getBestLink().toString());
+            } else if (next.getBestLink(priorityCounter) != null) {
+                usedWords.add(next.getBestLink(priorityCounter));
+                sb.append(next.getBestLink(priorityCounter).toString());
                 sb.append(" ");
-                next = repository.getByName(next.getBestLink().toString());
+                next = repository.getByName(next.getBestLink(priorityCounter).toString());
             } else {
                 // sb.append("NO FOLLOWING LINK");  <- commenting out for now
                 sb.append("is the end.");
                 break;
             }
         }
+    }
+    
+    private int priorityCounterGenerate() {
+        return (int) (Math.random() * 5);
     }
 
     private void guardAgainstNull(StringBuilder sb, Word next, ArrayList<Word> usedWords) {

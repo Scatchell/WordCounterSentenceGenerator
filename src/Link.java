@@ -20,7 +20,7 @@ public class Link {
     }
     
     public void restoreRate() {
-        this.rating += (int) (Math.random() * (this.highestRating - this.rating));
+        this.rating = this.highestRating;
     }
 
     @Override

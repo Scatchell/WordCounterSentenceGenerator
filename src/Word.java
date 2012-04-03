@@ -76,9 +76,22 @@ public class Word {
         return null;
     }
 
-    public Word getBestLink() {
+    public Word getBestLink(int priorityCounter) {
         Word returnWord;
-        int index = (int) ((Math.random() * this.links.size() / 3));
+        int index = 0;
+        int size = this.links.size();
+        switch (priorityCounter) {
+            case 0: index = (int) ((Math.random() * size / 5));
+                break;
+            case 1: index = (int) ((Math.random() * size / 5) + (size / 5));
+                break;
+            case 2: index = (int) ((Math.random() * size / 5) + ((size / 5) * 2 ));
+                break;
+            case 3: index = (int) ((Math.random() * size / 5) + ((size / 5) * 3 ));
+                break;
+            case 4: index = (int) ((Math.random() * size / 5) + ((size / 5) * 4 ));
+                break;
+        }
         if (getSingleLink(index) == null) {
             return null;
         } else if ((getSingleLink(index).toString().equals("^&eos&^")) && links.size() > 1) {

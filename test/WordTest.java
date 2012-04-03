@@ -57,7 +57,7 @@ public class WordTest {
         word.addLink(new Word("Blah"));
         word.addLink(new Word("Yay"));
         word.addLink(new Word("Yay"));
-        assertEquals(new Word("Yay"), word.getBestLink());
+        assertEquals(new Word("Yay"), word.getBestLink(0));
     }
     
     @Test
