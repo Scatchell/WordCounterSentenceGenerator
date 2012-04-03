@@ -16,11 +16,11 @@ public class Link {
     }
     
     public void downRate() {
-        this.rating -= (int) ((Math.random() * this.rating) + 1);
+        this.rating -= (int) ((Math.random() * (this.rating / 2)) + 1);
     }
     
     public void restoreRate() {
-        this.rating += (int) (Math.random() * (this.highestRating - this.rating));
+        this.rating = this.highestRating;
     }
 
     @Override

@@ -78,7 +78,7 @@ public class Word {
 
     public Word getBestLink() {
         Word returnWord;
-        int index = (int) ((Math.random() * this.links.size() / 3));
+        int index = (int) ((Math.random() * this.links.size() / 6));
         if (getSingleLink(index) == null) {
             return null;
         } else if ((getSingleLink(index).toString().equals("^&eos&^")) && links.size() > 1) {
