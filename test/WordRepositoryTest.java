@@ -1,23 +1,30 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
 public class WordRepositoryTest {
-    final WordRepository wordRepository = WordRepository.getInstance();
+    WordRepository wordRepository;
     Word word;
     Word linkWord;
 
     @Before
     public void setup() {
+        wordRepository = WordRepoTestClass.getInstance();
         word = new Word("Test");
         linkWord = new Word("Two");
+    }
+
+    @After
+    public void tearDown() {
+        wordRepository = null;
     }
     
     @Test
     public void isASingleton() {
         WordRepository repo = WordRepository.getInstance();
-        assertEquals(repo, wordRepository);
+        assertEquals(repo, WordRepository.getInstance());
     }
         
     @Test
@@ -32,7 +39,7 @@ public class WordRepositoryTest {
     public void whenAddingSameWordTwiceItDoesNotMakeDuplicateEntries() {
         wordRepository.addWord(word);
         wordRepository.addWord(word);
-        assertEquals(2, wordRepository.getWordList().size());
+        assertEquals(1, wordRepository.getWordList().size());
     }
     
     @Test

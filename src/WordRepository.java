@@ -4,7 +4,7 @@ public class WordRepository {
     private static WordRepository instance = null;
     private ArrayList<Word> wordList;
 
-    private WordRepository() {
+    protected WordRepository() {
         this.wordList = new ArrayList<Word>();
     }
 

@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,6 +12,11 @@ public class MyFileReaderTest {
     public void setUp() {
         fr = new MyFileReader(WordRepository.getInstance());
         newWord = new Word("Test");
+    }
+
+    @After
+    public void tearDown() {
+        fr.wordRepository = null;
     }
 
     @Test

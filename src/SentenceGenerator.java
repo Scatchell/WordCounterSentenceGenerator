@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class SentenceGenerator {
-    WordRepository repository;
+    public WordRepository repository;
     public int numOfWords;
     final static Word endOfSentence = new Word("^&eos&^");
     
