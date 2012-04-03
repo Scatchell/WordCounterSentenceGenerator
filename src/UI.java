@@ -23,7 +23,7 @@ public class UI {
 
     private static void runLoop(SentenceGenerator sg) {
         while (true) {
-            System.out.print("Please press enter to generate a random sentence...");
+            System.out.print("****************************************************");
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String name = null;
             try {
