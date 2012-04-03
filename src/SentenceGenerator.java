@@ -35,7 +35,7 @@ public class SentenceGenerator {
         usedWords.add(next);
         iterateAndSelectWords(counter, sb, next, usedWords);
         restoreLinkRates(usedWords);
-        return cullDuplicatesAndCreateString(sb.toString());
+        return cullDuplicatesAndCreateString(sb.toString()).replaceAll(" i\\.", " I.");
     }
 
     private void iterateAndSelectWords(int counter, StringBuilder sb, Word next, ArrayList<Word> usedWords) {
