@@ -52,7 +52,7 @@ public class SentenceGeneratorTest {
         repository.addOrUpdateWord(mark, joins);
         repository.addOrUpdateWord(joins, java);
         repository.addOrUpdateWord(java, SentenceGenerator.endOfSentence);
-        assertEquals("Mark joins java.", generator.buildString(mark, 2));
+        assertEquals("mark joins java.", generator.buildString(mark, 2, true));
     }
     
     @Test
@@ -77,5 +77,4 @@ public class SentenceGeneratorTest {
         SentenceGenerator sg = new SentenceGenerator(repository);
         assertEquals("a ear a dog an umbrella a toast an interest.", sg.cullDuplicatesAndCreateString("a ear a dog a umbrella a toast a interest"));
     }
-
 }

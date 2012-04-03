@@ -21,7 +21,7 @@ public class SentenceGenerator {
         ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
         Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
         System.out.println(word.toString());
-        String sentence = buildString(word, numOfWords);
+        String sentence = buildString(word, numOfWords, true);
         lastSentence = sentence;
         sb.append(sentence);
         System.out.println(sb.toString());
@@ -44,7 +44,7 @@ public class SentenceGenerator {
         Word word = this.repository.getByName(startingWord.toLowerCase());
 
         System.out.println(numOfWords + " : " + (numOfWords - userSelection));
-        String sentence = buildString(word, numOfWords - userSelection);
+        String sentence = buildString(word, numOfWords - userSelection, true);
         sentence = partialSentence + sentence;
         sb.append(sentence);
         lastSentence = sentence;
@@ -66,7 +66,7 @@ public class SentenceGenerator {
         return check.getBestLink(0);
     }
 
-    public String buildString(Word start, int counter) {
+    public String buildString(Word start, int counter, boolean firstTime) {
         StringBuilder sb = new StringBuilder();
         Word next = new Word("<WORD NOT FOUND>");
 
@@ -75,7 +75,9 @@ public class SentenceGenerator {
         }
 
         String firstWord = next.toString();
-        firstWord = upperCaseFirstLetter(firstWord);
+        if (!firstTime) {
+            firstWord = upperCaseFirstLetter(firstWord);
+        }
         sb.append(firstWord).append(" ");
         ArrayList<Word> usedWords = new ArrayList<Word>();
         usedWords.add(next);
