@@ -36,16 +36,29 @@ public class SentenceGenerator {
 //            System.out.print(s + " ");
 //        }
 
+        String partialSentence = getPartialSentence(userSelection - 1, sentenceArray);
         String startingWord = sentenceArray[userSelection - 1];
         System.out.println("Starting word: " + startingWord);
+
         StringBuilder sb = new StringBuilder();
         Word word = this.repository.getByName(startingWord.toLowerCase());
 
         System.out.println(numOfWords + " : " + (numOfWords - userSelection));
         String sentence = buildString(word, numOfWords - userSelection);
+        sentence = partialSentence + sentence;
         sb.append(sentence);
         lastSentence = sentence;
         System.out.println(sb.toString());
+    }
+
+    private String getPartialSentence(Integer userSelection, String[] sentenceArray) {
+        StringBuilder lastSentenceTemp = new StringBuilder();
+        for (int i = 0; i < userSelection; i++) {
+            String s = sentenceArray[i];
+            lastSentenceTemp.append(s + " ");
+        }
+
+        return lastSentenceTemp.toString();
     }
 
     public Word getNextLink(Word first) {
@@ -55,7 +68,12 @@ public class SentenceGenerator {
 
     public String buildString(Word start, int counter) {
         StringBuilder sb = new StringBuilder();
-        Word next = repository.getByName(start.toString());
+        Word next = new Word("<WORD NOT FOUND>");
+
+        if (repository.getByName(start.toString()) != null) {
+            next = repository.getByName(start.toString());
+        }
+
         String firstWord = next.toString();
         firstWord = upperCaseFirstLetter(firstWord);
         sb.append(firstWord).append(" ");
