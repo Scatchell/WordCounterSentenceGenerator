@@ -17,11 +17,12 @@ public class UI {
         for (Word next : words) {
             System.out.println(next.word + ": " + next.getLinks().toString());
         }
-        SentenceGenerator sg = new SentenceGenerator(WordRepository.getInstance());
-        runLoop(sg);
+        runLoop();
     }
 
-    private static void runLoop(SentenceGenerator sg) {
+    private static void runLoop() {
+        SentenceGenerator sg = new SentenceGenerator(WordRepository.getInstance(), 7);
+
         while (true) {
             System.out.print("***************Re-Generate from: ");
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,6 +35,7 @@ public class UI {
                     System.out.println("Goodbye.");
                     break;
                 }
+
                 userSelection = Integer.parseInt(userInput);
                 sg.regeneratePartialSentence(userSelection);
             } catch (IOException e) {

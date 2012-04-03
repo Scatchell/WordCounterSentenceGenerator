@@ -1,31 +1,50 @@
 import java.util.ArrayList;
-
+import java.util.Iterator;
+//todo allow partial sentence generator to add words to end of sentence (i.e. the sentence needs 1 more word to be good)
+//todo potentially allow to remove words from end of sentence, as well? (i.e. the sentence is great at 6 words and doesn't need the 7'th word)
+//todo make sure high eos links are added when the choosing the next word if the next word is the last word in the sentence.
+//todo teach sentence generator to learn (change ratings) based on user selections (good if move onto next word, bad if change word)
 public class SentenceGenerator {
     public WordRepository repository;
     public int numOfWords;
     final static Word endOfSentence = new Word("^&eos&^");
     String lastSentence;
-    
+    ArrayList<Word> exceptions;
+
     public SentenceGenerator(WordRepository repository) {
-        this.repository = repository;
-        this.numOfWords = (int) ((Math.random() * 7) + 4);
+        this(repository, ((int) ((Math.random() * 7) + 4)));
     }
 
     public SentenceGenerator(WordRepository repository, int numOfWords) {
         this.repository = repository;
+        System.out.println(numOfWords);
         this.numOfWords = numOfWords;
+        this.exceptions = new ArrayList<Word>();
     }
 
     public void generate() {
-        StringBuilder sb = new StringBuilder();
-        ArrayList<Word> wordsClone = (ArrayList<Word>) this.repository.getWordList().clone();
-        Word word = wordsClone.get((int) (Math.random() * wordsClone.size()));
-        System.out.println(word.toString());
+        //reset exceptions
+        exceptions = new ArrayList<Word>();
+
+        int wordListSize = this.repository.getWordList().size();
+        Word word = getWordFromList((int) (Math.random() * wordListSize));
         String sentence = buildString(word, numOfWords, true);
-        lastSentence = sentence;
-        sb.append(sentence);
-        System.out.println(sb.toString());
+        saveAndPrintSentence(sentence);
     }
+
+    private void saveAndPrintSentence(String sentence) {
+        lastSentence = sentence;
+        System.out.println(sentence);
+        sentence = addNumbersToWords(sentence);
+        System.out.println("Select number of word to be changed below");
+        System.out.println(sentence);
+    }
+
+    private Word getWordFromList(int index) {
+        ArrayList<Word> wordsList = (ArrayList<Word>) this.repository.getWordList().clone();
+        return wordsList.get(index);
+    }
+
 
     public void regeneratePartialSentence(Integer userSelection) {
         String[] sentenceArray = lastSentence.split(" ");
@@ -35,20 +54,39 @@ public class SentenceGenerator {
 //            String s = sentenceArray[i];
 //            System.out.print(s + " ");
 //        }
+        if (userSelection == 1) {
+            generate();
+        } else if (userSelection > 1 && userSelection < sentenceArray.length) {
+            String partialSentence = getPartialSentence(userSelection - 2, sentenceArray);
+            String startingWord = sentenceArray[userSelection - 2];
+            ArrayList<Word> exceptions = new ArrayList<Word>();
+            exceptions.add(new Word(sentenceArray[userSelection - 1]));
+//        System.out.println("Starting word: " + startingWord);
 
-        String partialSentence = getPartialSentence(userSelection - 1, sentenceArray);
-        String startingWord = sentenceArray[userSelection - 1];
-        System.out.println("Starting word: " + startingWord);
+            Word word = this.repository.getByName(startingWord.toLowerCase());
+            System.out.println(numOfWords - userSelection);
+            String sentence = buildString(word, numOfWords - userSelection + 2, false);
+            sentence = partialSentence + sentence;
+            lastSentence = sentence;
+            saveAndPrintSentence(sentence);
+        } else {
+            System.out.println("Selection out of bounds, please try again.");
+        }
+    }
 
-        StringBuilder sb = new StringBuilder();
-        Word word = this.repository.getByName(startingWord.toLowerCase());
+    private String addNumbersToWords(String sentence) {
+        String[] pieces = sentence.split(" ");
+        Integer numOfLinks;
+        StringBuilder sentenceWithWords = new StringBuilder();
 
-        System.out.println(numOfWords + " : " + (numOfWords - userSelection));
-        String sentence = buildString(word, numOfWords - userSelection, true);
-        sentence = partialSentence + sentence;
-        sb.append(sentence);
-        lastSentence = sentence;
-        System.out.println(sb.toString());
+        for (int i = 0; i < pieces.length - 1; i++) {
+            String piece = pieces[i];
+            numOfLinks = repository.getByName(piece.toLowerCase()).getLinks().size();
+
+            sentenceWithWords.append((i + 1) + ":" + piece).append("(" + numOfLinks + ") ");
+        }
+
+        return sentenceWithWords.toString();
     }
 
     private String getPartialSentence(Integer userSelection, String[] sentenceArray) {
@@ -68,63 +106,91 @@ public class SentenceGenerator {
 
     public String buildString(Word start, int counter, boolean firstTime) {
         StringBuilder sb = new StringBuilder();
-        Word next = new Word("<WORD NOT FOUND>");
+        Word next = new Word("<WORD_NOT_FOUND>");
 
         if (repository.getByName(start.toString()) != null) {
             next = repository.getByName(start.toString());
         }
 
         String firstWord = next.toString();
-        if (!firstTime) {
+        if (firstTime) {
             firstWord = upperCaseFirstLetter(firstWord);
         }
         sb.append(firstWord).append(" ");
-        ArrayList<Word> usedWords = new ArrayList<Word>();
-        usedWords.add(next);
-        iterateAndSelectWords(counter, sb, next, usedWords);
-        restoreLinkRates(usedWords);
+        exceptions.add(next);
+        iterateAndSelectWords(counter, sb, next);
+        restoreLinkRates(exceptions);
         return cullDuplicatesAndCreateString(sb.toString()).replaceAll(" i\\.", " I.");
     }
 
     private String upperCaseFirstLetter(String firstWord) {
-        String firstLetter = firstWord.substring(0,1);
+        String firstLetter = firstWord.substring(0, 1);
         return firstWord.replaceFirst(firstLetter, firstLetter.toUpperCase());
     }
 
-    private void iterateAndSelectWords(int counter, StringBuilder sb, Word next, ArrayList<Word> usedWords) {
+    private void iterateAndSelectWords(int counter, StringBuilder sb, Word next) {
+        int exceptionAttempts = 0;
         for (int i = 0; i < counter; i++) {
             int priorityCounter = priorityCounterGenerate();
-            if (i == counter - 1 ) {
-                guardAgainstNull(sb, next, usedWords);
+            if (i == counter - 1) {
+                guardAgainstNull(sb, next);
                 break;
             } else if (next.getBestLink(priorityCounter) != null) {
-                usedWords.add(next.getBestLink(priorityCounter));
-                sb.append(next.getBestLink(priorityCounter).toString());
-                sb.append(" ");
-                next = repository.getByName(next.getBestLink(priorityCounter).toString());
+                Word nextBestWord = next.getBestLink(priorityCounter);
+
+                //todo for some reason, when a very low number of exceptions exist (2), after cycling through all the exceptions and clearing the exception list, all exceptions are added again, and we cannot switch to different links anymore
+                if (!exceptionExists(nextBestWord)) {
+                    exceptions.add(nextBestWord);
+                    sb.append(nextBestWord.toString());
+                    sb.append(" ");
+
+                    next = repository.getByName(next.getBestLink(priorityCounter).toString());
+                } else {
+                    if (exceptionAttempts < 10) {
+                        System.out.println("Exception exists, trying again!");
+                        exceptionAttempts++;
+                    } else {
+                        System.out.println("Too many exceptions, starting from beginning again.");
+                        exceptionAttempts = 0;
+                        exceptions.clear();
+                    }
+
+                    i--;
+                }
             } else {
-                sb.append("<NO FOLLOWING LINK>");
+                sb.append("<NO_FOLLOWING_LINK>");
                 break;
             }
         }
     }
-    
+
+    private boolean exceptionExists(Word nextBestWord) {
+        for (Iterator<Word> iterator = exceptions.iterator(); iterator.hasNext(); ) {
+            Word next = iterator.next();
+            if (nextBestWord == next) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private int priorityCounterGenerate() {
         return (int) (Math.random() * 5);
     }
 
-    private void guardAgainstNull(StringBuilder sb, Word next, ArrayList<Word> usedWords) {
+    private void guardAgainstNull(StringBuilder sb, Word next) {
         if (repository.getLikelyEOSWord(next) == null) {
-            sb.append("EOS NOT FOUND");
+            sb.append("<EOS_NOT_FOUND>");
         } else {
-            usedWords.add(repository.getLikelyEOSWord(next));
+            exceptions.add(repository.getLikelyEOSWord(next));
             sb.append(repository.getLikelyEOSWord(next).toString());
         }
     }
 
     private void restoreLinkRates(ArrayList<Word> usedWords) {
         for (Word word : usedWords) {
-            for (Link link : word.links) {
+            for (Link link : this.repository.getByName(word.toString()).links) {
                 link.restoreRate();
             }
         }

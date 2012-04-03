@@ -55,7 +55,7 @@ public class WordRepository {
                 return wordList.get(i);
             }
         }
-        return null;
+        return new Word("<not_found>");
     }
 
     public Word getLikelyEOSWord(Word word) {
