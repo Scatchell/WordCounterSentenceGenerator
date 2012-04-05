@@ -76,36 +76,64 @@ public class Word {
         return null;
     }
 
-    public Word getBestLink(int priorityCounter) {
-        Word returnWord;
-        int index = 0;
-        int size = this.links.size();
-        switch (priorityCounter) {
-            case 0: index = (int) ((Math.random() * size / 5));
-                break;
-            case 1: index = (int) ((Math.random() * size / 5) + (size / 5));
-                break;
-            case 2: index = (int) ((Math.random() * size / 5) + ((size / 5) * 2 ));
-                break;
-            case 3: index = (int) ((Math.random() * size / 5) + ((size / 5) * 3 ));
-                break;
-            case 4: index = (int) ((Math.random() * size / 5) + ((size / 5) * 4 ));
-                break;
-        }
-        if (getSingleLink(index) == null) {
-            return null;
-        } else if ((getSingleLink(index).toString().equals("^&eos&^")) && links.size() > 1) {
-            returnWord = getSingleLink(index + 1);
-            links.get(index + 1).downRate();
-            Collections.sort(this.links, new LinkComparator());
-        } else if (getSingleLink(index).toString().equals("^&eos&^")) {
-            return null;
-        } else {
-            returnWord = getSingleLink(index);
-            links.get(index).downRate();
-            Collections.sort(this.links, new LinkComparator());
+    public Word getBestLink() {
+        Word returnWord = null;
+        int index;
+        boolean good = false;
+        while (good == false) {
+            index = calcRandomIndex();
+            if (links.isEmpty()) {
+                return null;
+            } else if (getSingleLink(index).isEOS() && links.size() == 1) {
+                return null;
+            } else if (!getSingleLink(index).isEOS()) {
+                good = true;
+                returnWord = getSingleLink(index);
+                links.get(index).downRate();
+                Collections.sort(this.links, new LinkComparator());
+            }
         }
         return returnWord;
+    }
+
+    public int calcRandomIndex() {
+        int index = 0;
+        int size = this.links.size();
+        int priorityCounter;
+        do {
+            priorityCounter = priorityCounterGenerate();
+
+            switch (priorityCounter) {
+                case 0:
+                    index = (int) ((Math.random() * size) / 5.0);
+                    break;
+                case 1:
+                    index = (int) Math.round((Math.random() * size / 5.0) + (size / 5.0));
+                    break;
+                case 2:
+                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 2.0));
+                    break;
+                case 3:
+                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 3.0));
+                    break;
+                case 4:
+                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 4.0));
+                    break;
+            }
+        } while (index >= size);
+        return index;
+    }
+
+    private int priorityCounterGenerate() {
+        return (int) (Math.random() * 5);
+    }
+
+    public boolean isEOS() {
+        if (this.word == eos) {
+            return true;
+        }
+
+        return false;
     }
 
     public boolean hasEOSLink() {

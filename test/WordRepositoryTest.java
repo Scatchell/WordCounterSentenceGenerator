@@ -72,11 +72,11 @@ public class WordRepositoryTest {
         Word foo = new Word("foo");
         Word bar = new Word("bar");
         wordRepository.addWord(foo);
-        assertEquals(null, wordRepository.getByName("foo").getBestLink(0));
+        assertEquals(null, wordRepository.getByName("foo").getBestLink());
         wordRepository.addOrUpdateWord(foo, bar);
-        assertEquals(bar, wordRepository.getByName("foo").getBestLink(0));
+        assertEquals(bar, wordRepository.getByName("foo").getBestLink());
         wordRepository.addOrUpdateWord(foo, bar);
-        assertEquals(bar, wordRepository.getByName("foo").getBestLink(0));
+        assertEquals(bar, wordRepository.getByName("foo").getBestLink());
     }
     
     @Test

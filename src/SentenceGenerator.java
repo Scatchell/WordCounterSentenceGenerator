@@ -101,10 +101,10 @@ public class SentenceGenerator {
 
     public Word getNextLink(Word first) {
         Word check = repository.getByName(first.toString());
-        return check.getBestLink(0);
+        return check.getBestLink();
     }
 
-    public String buildString(Word start, int counter, boolean firstTime) {
+    public String buildString(Word start, int numOfWords, boolean firstTime) {
         StringBuilder sb = new StringBuilder();
         Word next = new Word("<WORD_NOT_FOUND>");
 
@@ -118,7 +118,7 @@ public class SentenceGenerator {
         }
         sb.append(firstWord).append(" ");
         exceptions.add(next);
-        iterateAndSelectWords(counter, sb, next);
+        iterateAndSelectWords(numOfWords, sb, next);
         restoreLinkRates(exceptions);
         return cullDuplicatesAndCreateString(sb.toString()).replaceAll(" i\\.", " I.");
     }
@@ -129,37 +129,36 @@ public class SentenceGenerator {
     }
 
     private void iterateAndSelectWords(int counter, StringBuilder sb, Word next) {
-        int exceptionAttempts = 0;
         for (int i = 0; i < counter; i++) {
-            int priorityCounter = priorityCounterGenerate();
             if (i == counter - 1) {
-                guardAgainstNull(sb, next);
+                sb.append(getEOSWord(next));
                 break;
-            } else if (next.getBestLink(priorityCounter) != null) {
-                Word nextBestWord = next.getBestLink(priorityCounter);
-
-                //todo for some reason, when a very low number of exceptions exist (2), after cycling through all the exceptions and clearing the exception list, all exceptions are added again, and we cannot switch to different links anymore
-                if (!exceptionExists(nextBestWord)) {
-                    exceptions.add(nextBestWord);
-                    sb.append(nextBestWord.toString());
-                    sb.append(" ");
-
-                    next = repository.getByName(next.getBestLink(priorityCounter).toString());
-                } else {
-                    if (exceptionAttempts < 10) {
-                        System.out.println("Exception exists, trying again!");
-                        exceptionAttempts++;
-                    } else {
-                        System.out.println("Too many exceptions, starting from beginning again.");
-                        exceptionAttempts = 0;
-                        exceptions.clear();
-                    }
-
-                    i--;
-                }
             } else {
-                sb.append("<NO_FOLLOWING_LINK>");
-                break;
+                Word bestLink = next.getBestLink();
+                if (bestLink != null) {
+                    Word nextBestWord = bestLink;
+
+                    //todo for some reason, when a very low number of exceptions exist (2), after cycling through all the exceptions and clearing the exception list, all exceptions are added again, and we cannot switch to different links anymore
+                    if (!exceptionExists(nextBestWord)) {
+                        exceptions.add(nextBestWord);
+                        sb.append(nextBestWord.toString());
+                        sb.append(" ");
+
+                        next = repository.getByName(bestLink.toString());
+                    } else {
+                        if (exceptionsForAllLinks(nextBestWord)) {
+                            System.out.println("Already cycled through all options, starting from beginning again.");
+                            exceptions.clear();
+                        } else {
+                            System.out.println("Exception exists, trying again!");
+                        }
+
+                        i--;
+                    }
+                } else {
+                    sb.append("<NO_FOLLOWING_LINK>");
+                    break;
+                }
             }
         }
     }
@@ -175,16 +174,25 @@ public class SentenceGenerator {
         return false;
     }
 
-    private int priorityCounterGenerate() {
-        return (int) (Math.random() * 5);
+    public boolean exceptionsForAllLinks(Word word) {
+        ArrayList<Link> links = word.links;
+        boolean allExceptions = true;
+        for (Iterator<Link> iterator = links.iterator(); iterator.hasNext(); ) {
+            Link next = iterator.next();
+            if (!exceptionExists(next.otherWord))
+                allExceptions = false;
+        }
+
+        return allExceptions;
     }
 
-    private void guardAgainstNull(StringBuilder sb, Word next) {
+    private String getEOSWord(Word next) {
+        //todo make this search for different EOS word if found as null (i.e. get likely eos for a random word)
         if (repository.getLikelyEOSWord(next) == null) {
-            sb.append("<EOS_NOT_FOUND>");
+            return "<EOS_NOT_FOUND>";
         } else {
             exceptions.add(repository.getLikelyEOSWord(next));
-            sb.append(repository.getLikelyEOSWord(next).toString());
+            return repository.getLikelyEOSWord(next).toString();
         }
     }
 
