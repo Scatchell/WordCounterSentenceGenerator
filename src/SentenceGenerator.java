@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Iterator;
+
 //todo allow partial sentence generator to add words to end of sentence (i.e. the sentence needs 1 more word to be good)
 //todo potentially allow to remove words from end of sentence, as well? (i.e. the sentence is great at 6 words and doesn't need the 7'th word)
 //todo make sure high eos links are added when the choosing the next word if the next word is the last word in the sentence.
@@ -93,7 +93,7 @@ public class SentenceGenerator {
         StringBuilder lastSentenceTemp = new StringBuilder();
         for (int i = 0; i < userSelection; i++) {
             String s = sentenceArray[i];
-            lastSentenceTemp.append(s + " ");
+            lastSentenceTemp.append(s).append(" ");
         }
 
         return lastSentenceTemp.toString();
@@ -136,17 +136,16 @@ public class SentenceGenerator {
             } else {
                 Word bestLink = next.getBestLink();
                 if (bestLink != null) {
-                    Word nextBestWord = bestLink;
 
                     //todo for some reason, when a very low number of exceptions exist (2), after cycling through all the exceptions and clearing the exception list, all exceptions are added again, and we cannot switch to different links anymore
-                    if (!exceptionExists(nextBestWord)) {
-                        exceptions.add(nextBestWord);
-                        sb.append(nextBestWord.toString());
+                    if (!exceptionExists(bestLink)) {
+                        exceptions.add(bestLink);
+                        sb.append(bestLink.toString());
                         sb.append(" ");
 
                         next = repository.getByName(bestLink.toString());
                     } else {
-                        if (exceptionsForAllLinks(nextBestWord)) {
+                        if (exceptionsForAllLinks(bestLink)) {
                             System.out.println("Already cycled through all options, starting from beginning again.");
                             exceptions.clear();
                         } else {
@@ -164,8 +163,7 @@ public class SentenceGenerator {
     }
 
     private boolean exceptionExists(Word nextBestWord) {
-        for (Iterator<Word> iterator = exceptions.iterator(); iterator.hasNext(); ) {
-            Word next = iterator.next();
+        for (Word next : exceptions) {
             if (nextBestWord == next) {
                 return true;
             }
@@ -177,8 +175,7 @@ public class SentenceGenerator {
     public boolean exceptionsForAllLinks(Word word) {
         ArrayList<Link> links = word.links;
         boolean allExceptions = true;
-        for (Iterator<Link> iterator = links.iterator(); iterator.hasNext(); ) {
-            Link next = iterator.next();
+        for (Link next : links) {
             if (!exceptionExists(next.otherWord))
                 allExceptions = false;
         }

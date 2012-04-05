@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -51,17 +50,6 @@ public class WordTest {
         assertEquals(new Link(new Word(eos)), word.getNearestEOSLink());
     }
 
-    @Ignore
-    @Test
-    public void canGetTheBestLinkEvenWhenItIsNotTheFirstOneAdded() {
-        Word word = new Word("Mark");
-        word.addLink(new Word(eos));
-        word.addLink(new Word("Blah"));
-        word.addLink(new Word("Yay"));
-        word.addLink(new Word("Yay"));
-        assertEquals(new Word("Yay"), word.getBestLink());
-    }
-    
     @Test
     public void canDetermineWhenWordHasEosLink() {
         Word word = new Word("Mark");
@@ -84,5 +72,12 @@ public class WordTest {
         }
 
         assertEquals(false, outOfBounds);
+    }
+    
+    @Test
+    public void calculateRandomWorksWithTwoLinks() {
+        Word word = new Word("test");
+        word.addLink(new Word("test2"));
+
     }
 }

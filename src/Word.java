@@ -80,7 +80,7 @@ public class Word {
         Word returnWord = null;
         int index;
         boolean good = false;
-        while (good == false) {
+        while (!good) {
             index = calcRandomIndex();
             if (links.isEmpty()) {
                 return null;
@@ -101,23 +101,25 @@ public class Word {
         int size = this.links.size();
         int priorityCounter;
         do {
+            if (links.size() < 10) {
+                return (int) (Math.random() * links.size());
+            }
             priorityCounter = priorityCounterGenerate();
-
             switch (priorityCounter) {
                 case 0:
                     index = (int) ((Math.random() * size) / 5.0);
                     break;
                 case 1:
-                    index = (int) Math.round((Math.random() * size / 5.0) + (size / 5.0));
+                    index = (int) (((Math.random() * size) / 5.0) + (size / 5.0));
                     break;
                 case 2:
-                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 2.0));
+                    index = (int) (((Math.random() * size) / 5.0) + ((size / 5.0) * 2.0));
                     break;
                 case 3:
-                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 3.0));
+                    index = (int) (((Math.random() * size) / 5.0) + ((size / 5.0) * 3.0));
                     break;
                 case 4:
-                    index = (int) Math.round((Math.random() * size / 5.0) + ((size / 5.0) * 4.0));
+                    index = (int) (((Math.random() * size) / 5.0) + ((size / 5.0) * 4.0));
                     break;
             }
         } while (index >= size);

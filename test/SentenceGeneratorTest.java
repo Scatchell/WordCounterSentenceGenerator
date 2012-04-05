@@ -1,6 +1,5 @@
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -33,7 +32,6 @@ public class SentenceGeneratorTest {
         assertEquals(java, generator.getNextLink(joins));
     }
 
-    @Ignore
     @Test
     public void returnsEOSIfNextWordIsNull() {
         //todo tests freeze here
