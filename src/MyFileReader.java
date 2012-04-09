@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MyFileReader {
-    String filePath = "C:\\Java Projects\\WordCounterSentenceGenerator\\testFile";
+    String filePath = "/home/anthony/JaveSideProjects/WordInformation/testFile";
 //    String filePath = "/home/mbillie/WordCounterSentenceGenerator/testFile";
     final String eos = "^&eos&^";
     public WordRepository wordRepository;
